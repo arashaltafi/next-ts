@@ -4,8 +4,8 @@ import { usePathname } from "next/navigation"
 
 const page = ({ params }: { params: { id: string } }) => {
   
-  const pathname = usePathname()
-  console.log(pathname)
+  const pathName = usePathname()
+  console.log('pathName:', pathName)
 
   return (
     <div>
