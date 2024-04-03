@@ -36,6 +36,13 @@ const Home = () => {
           <Link href="/post/123">Post 123 Page</Link>
         </li>
       </ul>
+
+      <style jsx>{`
+          li {
+            color: green;
+          }
+      `}
+      </style>
     </div>
   )
 }
