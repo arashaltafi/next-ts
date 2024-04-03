@@ -1,6 +1,16 @@
+"use client"
+
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 const Home = () => {
+
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push('./post')
+  }
+
   return (
     <div className="flex flex-col gap-8">
       <p className="text-3xl text-center">
@@ -18,9 +28,9 @@ const Home = () => {
         <li className="hover:text-yellow-400">
           <Link href="/contact">Contact Page</Link>
         </li>
-        <li className="hover:text-yellow-400">
-          <Link href="/post">Post Page</Link>
-        </li>
+        <button onClick={handleClick} className="text-red-500 hover:text-blue-500">
+          Post Page
+        </button>
         <li className="hover:text-yellow-400">
           <Link href="/post/123">Post 123 Page</Link>
         </li>
