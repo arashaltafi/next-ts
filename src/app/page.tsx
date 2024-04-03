@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import styles from "./styles/Home.module.css"
 
 const Home = () => {
 
@@ -17,7 +18,7 @@ const Home = () => {
         Next Js 14
       </p>
 
-      <p className="text-3xl text-center">
+      <p className={`text-3xl text-center ${styles.title}`}>
         نکست جی اس 14
       </p>
 
