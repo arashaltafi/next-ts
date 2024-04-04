@@ -38,6 +38,9 @@ const Home = () => {
         <li className="hover:text-yellow-400">
           <Link href="/bootstrap">Bootstrap</Link>
         </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/scss">Scss</Link>
+        </li>
         <button onClick={handleClick} className="text-red-500 hover:text-blue-500">
           Post Page
         </button>

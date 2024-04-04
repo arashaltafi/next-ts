@@ -1,0 +1,17 @@
+.center {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    color: aqua;
+    font-size: 48px;
+}
+
+.subTitle {
+    color: lightcoral;
+    font-size: 32px;
+}
