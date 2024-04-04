@@ -29,6 +29,12 @@ const Home = () => {
         <li className="hover:text-yellow-400">
           <Link href="/contact">Contact Page</Link>
         </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/styled-jsx">Styled Jsx</Link>
+        </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/styled-component">Styled Component</Link>
+        </li>
         <button onClick={handleClick} className="text-red-500 hover:text-blue-500">
           Post Page
         </button>
@@ -36,13 +42,6 @@ const Home = () => {
           <Link href="/post/123">Post 123 Page</Link>
         </li>
       </ul>
-
-      <style jsx>{`
-          li {
-            color: green;
-          }
-      `}
-      </style>
     </div>
   )
 }
