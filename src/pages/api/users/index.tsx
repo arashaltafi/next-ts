@@ -2,10 +2,15 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 
 export default function (req: NextApiRequest, res: NextApiResponse) {
     const { name } = req.body;
+    const { id } = req.query;
 
     switch (req.method) {
         case 'GET':
-            res.status(200).send({ message: 'METHOD GET' })
+            if (!id || id == '') {
+                res.status(200).send({ message: 'Please Enter id' })
+            } else {
+                res.status(200).send({ message: 'Your Query', id: id })
+            }
             break;
         case 'POST':
             if (!name || name == '') {
