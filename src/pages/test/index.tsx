@@ -2,7 +2,7 @@ import React from 'react'
 
 const index = () => {
   return (
-    <div>test</div>
+    <div className='text-lg text-red-500'>test</div>
   )
 }
 
