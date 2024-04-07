@@ -6,6 +6,7 @@ import persian from "react-date-object/calendars/persian"
 import persian_fa from "react-date-object/locales/persian_fa"
 import TimePicker from 'react-multi-date-picker/plugins/time_picker'
 
+//https://shahabyazdi.github.io/react-multi-date-picker/
 const page = () => {
   const [value, setValue] = useState<Date>(new Date());
   const [value1, setValue1] = useState(new DateObject({ calendar: persian, locale: persian_fa }));
