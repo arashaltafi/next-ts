@@ -11,6 +11,7 @@ const page = () => {
   const [value2, setValue2] = useState(new DateObject({ calendar: persian, locale: persian_fa }));
   const [value3, setValue3] = useState(new DateObject({ calendar: persian, locale: persian_fa }));
   const [value4, setValue4] = useState(new DateObject({ calendar: persian, locale: persian_fa }));
+  const [value5, setValue5] = useState(new DateObject({ calendar: persian, locale: persian_fa }));
   const [date, setDate] = useState(new DateObject({ calendar: persian, locale: persian_fa }));
 
   const datePickerRef = useRef(null);
@@ -115,13 +116,11 @@ const page = () => {
       <span className='w-[90%] h-px bg-white mt-12' />
 
 
-      <h2 className='mt-32'>Calendar Sample Full</h2>
-      <p>Date Selected: {value4.toString()}</p>
+      <h2 className='mt-32'>Calendar Sample Both</h2>
+      <p>Date Selected: {value5.toString()}</p>
       <Calendar
         numberOfMonths={2}
         showOtherDays
-        range
-        rangeHover
         multiple
         ref={calendarRef}
         buttons={true}
@@ -143,8 +142,10 @@ const page = () => {
         disableYearPicker={false}
         calendar={persian}
         locale={persian_fa}
-        onChange={handleChange}
+        onChange={(value: DateObject) => setValue5(value)}
       />
+
+      <span className='w-[90%] h-px bg-white mt-12' />
 
       <DatePicker
         className="rmdp-mobile"
