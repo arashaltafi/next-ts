@@ -56,6 +56,9 @@ const Home = () => {
         <li className="hover:text-yellow-400">
           <Link href="/calendar">Calender</Link>
         </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/image">Image</Link>
+        </li>
       </ul>
     </div>
   )
