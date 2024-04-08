@@ -59,6 +59,9 @@ const Home = () => {
         <li className="hover:text-yellow-400">
           <Link href="/image">Image</Link>
         </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/emoji">EmojiPicker 1</Link>
+        </li>
       </ul>
     </div>
   )
