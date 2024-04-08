@@ -3,6 +3,8 @@
 import React from 'react'
 import EmojiPicker, { EmojiClickData, EmojiStyle, Theme } from 'emoji-picker-react';
 
+//https://www.npmjs.com/package/emoji-picker-react
+//https://www.npmjs.com/package/emoji-picker-element
 const EmojiPicker1 = () => {
     return (
         <div className='flex flex-col items-center justify-center gap-12 w-full'>
