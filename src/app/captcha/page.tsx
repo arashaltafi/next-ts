@@ -73,6 +73,18 @@ const CaptchaSample = () => {
                     ctx.arc(x, y, radius, 0, Math.PI * 2);
                     ctx.fill();
                 }
+
+                const width = 20;
+                const height = 20;
+                const maxWH = Math.max(width, height);
+
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.5)'; // Set a darker color for circles
+                for (let i = 0; i < 10; i++) {
+                    const size = Math.random() * maxWH;
+                    const x = Math.random() * width - size / 2;
+                    const y = Math.random() * height - size / 2;
+                    ctx.fillRect(x, y, size, size);
+                }
             }
         }
     }
