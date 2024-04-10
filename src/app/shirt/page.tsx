@@ -3,6 +3,7 @@
 import React, { useRef, useState } from 'react';
 import Draggable from 'react-draggable';
 import html2canvas from 'html2canvas';
+import Image from 'next/image';
 
 const ShirtDesign = () => {
     const [userImage, setUserImage] = useState<string | null>(null);
@@ -137,22 +138,30 @@ const ShirtDesign = () => {
             </div>
 
             <div ref={divRef} className="relative">
-                <img
-                    src="/shirt2.png"
+                <Image
+                    src="/images/shirt2.png"
                     alt="T-Shirt"
                     className="w-full h-auto"
+                    style={{
+                        width: '100%',
+                        height: '100%',
+                    }}
+                    width={1000}
+                    height={1000}
                 />
                 {userImage && (
                     <Draggable onStop={handleDragStop} position={position}>
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                            <img
+                            <Image
                                 src={userImage}
                                 alt="User Image"
+                                width={width}
+                                height={height}
                                 style={{
-                                    width: `${width}px`,
-                                    height: `${height}px`,
                                     transform: `rotate(${rotation}deg)`,
                                     opacity: opacity,
+                                    width: width,
+                                    height: height,
                                 }}
                             />
                         </div>
