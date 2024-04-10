@@ -69,6 +69,9 @@ const Home = () => {
             <Link href="/captcha">CaptchaSample</Link>
           </li>
           <li className="hover:text-yellow-400">
+            <Link href="/shirt">Shirt Design</Link>
+          </li>
+          <li className="hover:text-yellow-400">
             <button onClick={() => router.push('/not-found')}>Not Found 1</button>
           </li>
         </ul>
