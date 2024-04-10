@@ -43,6 +43,7 @@ const CaptchaSample = () => {
                 ctx.fillStyle = 'white'; // Set text color
                 ctx.textAlign = 'center'; // Align text in the center horizontally
                 ctx.fillText(captchaNumber.toString(), canvas.width / 2, 25); // Position text at the center horizontally
+                // ctx.strokeText(captchaNumber.toString(), canvas.width / 2, 25); // Position text at the center horizontally
 
                 // Add random dots
                 ctx.fillStyle = 'rgba(255, 255, 255, 0.7)'; // Set a darker color for circles
