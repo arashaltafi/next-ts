@@ -5,6 +5,8 @@ interface UserType {
 }
 
 const LoadingSample = async () => {
+    throw new Error('Error in Loading Sample')
+
     const data = await callApi();
 
     return (
