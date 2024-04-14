@@ -75,6 +75,9 @@ const Home = () => {
             <Link href="/pdf">Pdf Sample</Link>
           </li>
           <li className="hover:text-yellow-400">
+            <Link href="/video">Next Video</Link>
+          </li>
+          <li className="hover:text-yellow-400">
             <button onClick={() => router.push('/not-found')}>Not Found 1</button>
           </li>
         </ul>
