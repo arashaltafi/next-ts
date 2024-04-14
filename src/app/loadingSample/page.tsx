@@ -5,8 +5,6 @@ interface UserType {
 }
 
 const LoadingSample = async () => {
-    throw new Error('Error in Loading Sample')
-
     const data = await callApi();
 
     return (
@@ -26,7 +24,24 @@ const callApi = async () => {
     });
     const data: UserType = await response.json();
     console.log('useServer data:', data)
+
+    if (data.name == undefined) {
+        throw new Error('data is undefined')
+    }
+
     return data
 }
 
 export default LoadingSample
+
+// {
+//     <RootLayout>
+//         <RootTemplate>
+//             <RootErrorHandler>
+//                 <Suspense fallback={<Loading />}>
+//                     <PageRouter />
+//                 </Suspense>
+//             </RootErrorHandler>
+//         </RootTemplate>
+//     </RootLayout>
+// }
