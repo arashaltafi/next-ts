@@ -7,7 +7,7 @@ const Template = ({ children }: any) => {
             <p className='animate-blink'>
                 reRendered in each change route (template)
             </p>
-            <Link href={'/loadingSample/test'}>back</Link>
+            <Link href={'/loadingSample'}>backward</Link>
             {children}
         </div>
     )

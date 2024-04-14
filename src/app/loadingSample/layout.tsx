@@ -10,7 +10,7 @@ const layout = ({ children }: any) => {
                     rendered just once (layout)
                 </p>
                 <div className='animate-blink text-right'>
-                    <Link href={'/loadingSample/test'}>back</Link>
+                    <Link href={'/loadingSample/test'}>forward</Link>
                 </div>
                 {children}
             </div>
