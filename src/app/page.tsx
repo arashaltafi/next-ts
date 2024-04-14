@@ -5,6 +5,9 @@ import { useRouter } from 'next/navigation'
 import styles from "./styles/Home.module.css"
 import { Suspense } from 'react'
 import Loading from './loading'
+import { Button } from "@nextui-org/button";
+import { NextUIProvider } from "@nextui-org/system";
+import { Avatar } from '@nextui-org/react'
 
 const Home = () => {
 
@@ -81,6 +84,21 @@ const Home = () => {
             <button onClick={() => router.push('/not-found')}>Not Found 1</button>
           </li>
         </ul>
+        <h2>NextUI</h2>
+        <NextUIProvider>
+          <Button variant='shadow' color="danger">Press me</Button>
+
+          <div className="flex flex-row gap-3 items-center justify-center">
+            <Avatar src="https://arashaltafi.ir/Social_Media/story-00.jpg" />
+            <Avatar name="Junior" />
+            <Avatar src="https://arashaltafi.ir/Social_Media/story-01.jpg" />
+            <Avatar name="Jane" />
+            <Avatar src="https://arashaltafi.ir/Social_Media/story-02.jpg" />
+            <Avatar name="Joe" />
+          </div>
+
+        </NextUIProvider>
+
       </div>
     </Suspense>
   )
