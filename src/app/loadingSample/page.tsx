@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 interface UserType {
     name: string,
     age: number,
@@ -33,6 +35,11 @@ const callApi = async () => {
 }
 
 export default LoadingSample
+
+export const metadata: Metadata = {
+    title: 'loadingSample title',
+    description: 'loadingSample description',
+}
 
 // {
 //     <RootLayout>
