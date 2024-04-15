@@ -28,6 +28,18 @@ const ImageComponent = () => {
                 fill={fill}
             />
 
+            <Image
+                className='rounded-xl'
+                width={500}
+                height={500}
+                src='https://arashaltafi.ir/arash.jpg'
+                alt='Arash'
+                placeholder='blur'
+                blurDataURL='/bg.jpg'
+                loading='lazy'
+                quality='100'
+            />
+
             <div className='flex flex-row items-center justify-center gap-8'>
                 <Image
                     className='rounded-xl shadow-md shadow-red-500'
