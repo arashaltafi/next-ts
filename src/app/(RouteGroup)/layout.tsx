@@ -4,15 +4,16 @@ import { redirect } from 'next/navigation'
 //hoc sample
 const layout = ({ children }: any) => {
 
-    const a = cookies().get('Token')
-    console.log('cookies name', a?.name)
-    console.log('cookies value', a?.value)
+    const getCookie = cookies().get('Token')
+    const hasCookie = cookies().has('Token')
+    console.log('cookies name', getCookie?.name)
+    console.log('cookies value', getCookie?.value)
 
-    if (a?.value) {
+    if (hasCookie) {
         return (
             <>{children}</>
         )
-    } else {
+    } else {        
         redirect('/')
     }
 }
