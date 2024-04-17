@@ -1,34 +1,65 @@
 "use client"
 
-import React, { useEffect, useState } from 'react'
-import 'react-image-crop/dist/ReactCrop.css'
-import ReactCrop, { PixelCrop, type Crop } from 'react-image-crop'
+import React, { useRef, useState } from 'react';
+import { CropperRef, Cropper, CircleStencil } from 'react-advanced-cropper';
+import 'react-advanced-cropper/dist/style.css'
 
-//npm i react-image-crop
+//npm i react-advanced-cropper
 const ImageCrop = () => {
-    const [completedCrop, setCompletedCrop] = useState<PixelCrop>()
-    
-    useEffect(() => {
-        console.log('completedCrop:', completedCrop)
-    }, [completedCrop])
+    const image = 'https://arashaltafi.ir/arash.jpg'
 
-    const [crop, setCrop] = useState<Crop>({
-        unit: '%', // Can be 'px' or '%'
-        x: 25,
-        y: 25,
-        width: 50,
-        height: 50
-    })
+    const cropperRef = useRef<CropperRef>(null);
+    const [imageCrop, setImageCrop] = useState<string>();
+
+    const onChange = (cropper: CropperRef) => {
+        console.log(cropper.getCoordinates(), cropper.getCanvas());
+        if (cropperRef.current) {
+            setImageCrop(cropperRef.current.getCanvas()?.toDataURL());
+        }
+    }
+
+    const onCrop = () => {
+        if (cropperRef.current) {
+            setImageCrop(cropperRef.current.getCanvas()?.toDataURL());
+        }
+        onUpload()
+    }
+
+    const onUpload = () => {
+        const canvas = cropperRef.current?.getCanvas();
+        if (canvas) {
+            const base64 = canvas.toDataURL('image/png');
+            console.log('base64:', base64);
+        }
+    }
 
     return (
-        <div>
-            <ReactCrop
-                crop={crop}
-                onChange={c => setCrop(c)}
-                onComplete={(c) => setCompletedCrop(c)}
+        <div className='flex flex-col gap-16 items-center justify-center'>
+            <Cropper
+                ref={cropperRef}
+                src={image}
+                onChange={onChange}
+                className={'cropper'}
+                stencilComponent={CircleStencil}
+                stencilProps={{
+                    aspectRatio: 1 / 1,
+                    movable: true,
+                    resizable: false,
+                    grid: true
+                }}
+            />
+
+            <button
+                className='w-full bg-red-500 text-white font-bold py-2 px-4 rounded'
+                onClick={onCrop}
             >
-                <img src={'https://arashaltafi.ir/arash.jpg'} />
-            </ReactCrop>
+                Show Result
+            </button>
+
+            {
+                imageCrop &&
+                <img src={imageCrop} alt="Cropped" className='size-20' />
+            }
         </div>
     )
 }
