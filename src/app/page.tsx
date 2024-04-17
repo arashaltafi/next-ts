@@ -16,7 +16,9 @@ const Home = () => {
   }
 
   return (
-    <div className="flex flex-col gap-8">
+    <div
+      className="flex flex-col gap-8"
+      style={{ cursor: `url(/cursor.svg), auto` }}>
       <p className="text-3xl text-center">
         Next Js 14
       </p>
@@ -99,7 +101,7 @@ const Home = () => {
           <Avatar name="Junior" />
           <Avatar isDisabled className="w-20 h-20 text-large" src="https://arashaltafi.ir/Social_Media/story-01.jpg" />
           <Avatar name="Jane" />
-          <Avatar isBordered  size="sm" src="https://arashaltafi.ir/Social_Media/story-02.jpg" />
+          <Avatar isBordered size="sm" src="https://arashaltafi.ir/Social_Media/story-02.jpg" />
           <Avatar name="Joe" />
         </div>
 
