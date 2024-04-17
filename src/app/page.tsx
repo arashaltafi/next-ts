@@ -66,6 +66,9 @@ const Home = () => {
           <Link href="/imageCrop">Image Crop 1</Link>
         </li>
         <li className="hover:text-yellow-400">
+          <Link href="/imageCrop2">Image Crop 2</Link>
+        </li>
+        <li className="hover:text-yellow-400">
           <Link href="/emoji">EmojiPicker 1</Link>
         </li>
         <li className="hover:text-yellow-400">

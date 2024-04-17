@@ -13,8 +13,10 @@ interface ImageCropProps {
     showGrid: boolean,
     cropShape: 'rect' | 'round',
     zoomSpeed?: number | undefined,
+    rotation?: number | undefined
     onZoomChange: React.Dispatch<React.SetStateAction<number>>,
     onCropChange: (location: Point) => void,
+    onRotationChange?: ((rotation: number) => void) | undefined
     onCropComplete?: ((croppedArea: Area, croppedAreaPixels: Area) => void) | undefined
 }
 
@@ -32,6 +34,8 @@ const ImageCropComponent = (props: ImageCropProps) => {
                 showGrid={props.showGrid}
                 cropShape={props.cropShape}
                 zoomSpeed={props.zoomSpeed}
+                rotation={props.rotation}
+                onRotationChange={props.onRotationChange}
                 onCropChange={props.onCropChange}
                 onCropComplete={props.onCropComplete}
                 onZoomChange={props.onZoomChange}
