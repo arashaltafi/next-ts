@@ -89,6 +89,9 @@ const Home = () => {
           <Link href="/loadingSample">Loading Sample</Link>
         </li>
         <li className="hover:text-yellow-400">
+          <Link href="/snapScroll">Snap Scroll</Link>
+        </li>
+        <li className="hover:text-yellow-400">
           <button onClick={() => router.push('/not-found')}>Not Found 1</button>
         </li>
       </ul>
