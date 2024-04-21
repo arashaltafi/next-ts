@@ -89,7 +89,10 @@ const Home = () => {
           <Link href="/loadingSample">Loading Sample</Link>
         </li>
         <li className="hover:text-yellow-400">
-          <Link href="/snapScroll">Snap Scroll</Link>
+          <Link href="/snapScroll">Snap Scroll sample 1</Link>
+        </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/snapScroll/sample2">Snap Scroll sample 2</Link>
         </li>
         <li className="hover:text-yellow-400">
           <Link href="/gsapSample">Gsap Sample</Link>
