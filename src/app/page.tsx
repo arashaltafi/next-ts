@@ -98,9 +98,6 @@ const Home = () => {
           <Link href="/gsapSample">Gsap Sample</Link>
         </li>
         <li className="hover:text-yellow-400">
-          <Link href="/lenisSample">Lenis Sample</Link>
-        </li>
-        <li className="hover:text-yellow-400">
           <Link href="/toastify">Toastify Sample</Link>
         </li>
         <li className="hover:text-yellow-400">
