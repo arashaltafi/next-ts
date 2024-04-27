@@ -27,7 +27,7 @@ const GsapSample = () => {
                 scrollTrigger: {
                     trigger: section1Ref.current,
                     start: "top top",
-                    end: "2000 top",
+                    end: "1000 top",
                     scrub: 0.6,
                     pin: true,
                 },
