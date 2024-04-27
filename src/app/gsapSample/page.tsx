@@ -6,7 +6,6 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const GsapSample = () => {
     const sectionRef = useRef(null);
-    const triggerRef = useRef(null);
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -21,7 +20,7 @@ const GsapSample = () => {
                 ease: "none",
                 duration: 5,
                 scrollTrigger: {
-                    trigger: triggerRef.current,
+                    trigger: sectionRef.current,
                     start: "top top",
                     end: "2000 top",
                     scrub: 0.6,
@@ -41,20 +40,18 @@ const GsapSample = () => {
             </header>
 
             <section className="overflow-hidden">
-                <div ref={triggerRef}>
-                    <div ref={sectionRef} className="h-screen w-[400vw] flex flex-row relative">
-                        <div className="h-screen w-screen flex items-center justify-center">
-                            <h3 className="uppercase text-4xl text-red-500">Section 1</h3>
-                        </div>
-                        <div className="h-screen w-screen flex items-center justify-center">
-                            <h3 className="uppercase text-4xl text-red-500">Section 2</h3>
-                        </div>
-                        <div className="h-screen w-screen flex items-center justify-center">
-                            <h3 className="uppercase text-4xl text-red-500">Section 3</h3>
-                        </div>
-                        <div className="h-screen w-screen flex items-center justify-center">
-                            <h3 className="uppercase text-4xl text-red-500">Section 4</h3>
-                        </div>
+                <div ref={sectionRef} className="h-screen w-[400vw] flex flex-row relative">
+                    <div className="h-screen w-screen flex items-center justify-center">
+                        <h3 className="uppercase text-4xl text-red-500">Section 1</h3>
+                    </div>
+                    <div className="h-screen w-screen flex items-center justify-center">
+                        <h3 className="uppercase text-4xl text-red-500">Section 2</h3>
+                    </div>
+                    <div className="h-screen w-screen flex items-center justify-center">
+                        <h3 className="uppercase text-4xl text-red-500">Section 3</h3>
+                    </div>
+                    <div className="h-screen w-screen flex items-center justify-center">
+                        <h3 className="uppercase text-4xl text-red-500">Section 4</h3>
                     </div>
                 </div>
             </section>
