@@ -16,7 +16,9 @@ const GsapSample = () => {
                 translateX: 0,
             },
             {
+                scale: 0.5,
                 translateX: "-300vw",
+                opacity: 0.8,
                 ease: "none",
                 duration: 5,
                 scrollTrigger: {
@@ -41,16 +43,16 @@ const GsapSample = () => {
 
             <section className="overflow-hidden">
                 <div ref={sectionRef} className="h-screen w-[400vw] flex flex-row relative">
-                    <div className="h-screen w-screen flex items-center justify-center">
+                    <div className="h-screen w-screen flex items-center justify-center bg-purple-400">
                         <h3 className="uppercase text-4xl text-red-500">Section 1</h3>
                     </div>
-                    <div className="h-screen w-screen flex items-center justify-center">
+                    <div className="h-screen w-screen flex items-center justify-center bg-purple-500">
                         <h3 className="uppercase text-4xl text-red-500">Section 2</h3>
                     </div>
-                    <div className="h-screen w-screen flex items-center justify-center">
+                    <div className="h-screen w-screen flex items-center justify-center bg-purple-600">
                         <h3 className="uppercase text-4xl text-red-500">Section 3</h3>
                     </div>
-                    <div className="h-screen w-screen flex items-center justify-center">
+                    <div className="h-screen w-screen flex items-center justify-center bg-purple-700">
                         <h3 className="uppercase text-4xl text-red-500">Section 4</h3>
                     </div>
                 </div>
