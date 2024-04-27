@@ -3,6 +3,7 @@ import localFont from 'next/font/local'
 import './globals.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'react-toastify/dist/ReactToastify.css';
+import ReduxProvider from '@/lib/provider';
 
 export const metadata: Metadata = {
   title: 'NextJs 14',
@@ -22,7 +23,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`bg-slate-900 text-slate-200 ${vazirFont.className}`}>
         <main className='px-8 py-6'>
-          {children}
+          <ReduxProvider>
+            {children}
+          </ReduxProvider>
         </main>
       </body>
     </html>

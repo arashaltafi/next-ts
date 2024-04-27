@@ -104,6 +104,9 @@ const Home = () => {
           <Link href="/particles">Particles</Link>
         </li>
         <li className="hover:text-yellow-400">
+          <Link href="/reduxSample">Redux</Link>
+        </li>
+        <li className="hover:text-yellow-400">
           <button onClick={() => router.push('/not-found')}>Not Found 1</button>
           {/* in server component logic -> notFound() */}
         </li>

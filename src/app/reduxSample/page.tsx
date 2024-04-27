@@ -1,36 +1,37 @@
 "use client"
 
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import sampleSlice from '../../../redux/sampleSlice';
-import { store } from '../../../redux/store';
-import { Provider } from 'react-redux';
+import React, { useEffect } from 'react'
+import { set } from '@/lib/features/sampleSlice'
+import { useSelector, useDispatch } from 'react-redux';
+import { AppDispatch, RootState } from '@/lib/store';
 
 const ReduxSample = () => {
-    const dispatch = useDispatch();
-    const userSelector = useSelector((state: any) => state.sample);
+    const dispatch = useDispatch<AppDispatch>();
+    const userSelector = useSelector((state: RootState) => state.sampleSlice);
+
+    useEffect(() => {
+        console.log(userSelector.isLogin)
+    }, [userSelector])
 
     return (
-        <Provider store={store}>
-            <div className='flex flex-col items-center justify-center'>
-                <h1>ReduxSample</h1>
-                <h2>{userSelector}</h2>
+        <div className='flex flex-col items-center justify-center'>
+            <h1>ReduxSample</h1>
+            <h2>{userSelector.isLogin}</h2>
 
-                <p>
-                    {
-                        userSelector ? "user is login" : "user is not login"
-                    }
-                </p>
+            <p>
+                {
+                    userSelector.isLogin ? "user is login" : "user is not login"
+                }
+            </p>
 
-                <button
-                    onClick={() => dispatch(sampleSlice.actions.set(true))}
-                >
-                    {
-                        userSelector ? "logout" : "login"
-                    }
-                </button>
-            </div>
-        </Provider>
+            <button
+                onClick={() => dispatch(set(!userSelector.isLogin))}
+            >
+                {
+                    userSelector.isLogin ? "logout" : "login"
+                }
+            </button>
+        </div>
     )
 }
 
