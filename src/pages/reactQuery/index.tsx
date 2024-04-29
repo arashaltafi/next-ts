@@ -15,7 +15,7 @@ const ReactQuerySample = () => {
 
     if (error) return "An error has occurred: " + error;
 
-    if (data == undefined) return "data is undefined";
+    if (data == undefined || data == null) return "data is undefined";
 
     return (
         <div className='flex flex-col items-center justify-center '>
