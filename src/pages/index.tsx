@@ -40,6 +40,12 @@ const index = () => {
         <li className="hover:text-yellow-400">
           <Link href="/reduxSample">Redux Sample route</Link>
         </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/swr">Sample SWR for CSR</Link>
+        </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/reactQuery">Sample reactQuery for CSR</Link>
+        </li>
       </ul>
     </div>
   )
