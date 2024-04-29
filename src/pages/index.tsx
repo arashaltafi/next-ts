@@ -23,6 +23,9 @@ const index = () => {
           <Link href="/ssg">{`ssg => Static Site Generation (Page Router)`}</Link>
         </li>
         <li className="hover:text-yellow-400">
+          <Link href="/isr">{`isr => ssg with revalidate`}</Link>
+        </li>
+        <li className="hover:text-yellow-400">
           <Link href="/test">test</Link>
         </li>
         <li className="hover:text-yellow-400">
@@ -33,6 +36,9 @@ const index = () => {
         </li>
         <li className="hover:text-yellow-400">
           <Link href="/dynamic/123">dynamic route</Link>
+        </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/reduxSample">Redux Sample route</Link>
         </li>
       </ul>
     </div>

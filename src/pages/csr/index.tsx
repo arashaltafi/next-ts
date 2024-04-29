@@ -25,6 +25,7 @@ const SampleCSR = () => {
   return (
     <div className='flex flex-col items-center justify-center gap-8 w-full px-16 py-8'>
       <h1 className='font-bold text-3xl'>Sample CSR rendering in PageRouter</h1>
+      <p>client side rendering</p>
       {
         data &&
         <>
