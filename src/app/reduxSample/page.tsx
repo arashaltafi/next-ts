@@ -2,33 +2,32 @@
 
 import React, { useEffect } from 'react'
 import { set } from '@/lib/features/sampleSlice'
-import { useSelector, useDispatch } from 'react-redux';
-import { AppDispatch, RootState } from '@/lib/store';
+import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 
 const ReduxSample = () => {
-    const dispatch = useDispatch<AppDispatch>();
-    const userSelector = useSelector((state: RootState) => state.sampleSlice);
+    const dispatch = useAppDispatch();
+    const isLoginSelector = useAppSelector((state) => state.sampleSlice.isLogin);
 
     useEffect(() => {
-        console.log(userSelector.isLogin)
-    }, [userSelector])
+        console.log(isLoginSelector)
+    }, [isLoginSelector])
 
     return (
         <div className='flex flex-col items-center justify-center'>
             <h1>ReduxSample</h1>
-            <h2>{userSelector.isLogin}</h2>
+            <h2>{isLoginSelector}</h2>
 
             <p>
                 {
-                    userSelector.isLogin ? "user is login" : "user is not login"
+                    isLoginSelector ? "user is login" : "user is not login"
                 }
             </p>
 
             <button
-                onClick={() => dispatch(set(!userSelector.isLogin))}
+                onClick={() => dispatch(set(!isLoginSelector))}
             >
                 {
-                    userSelector.isLogin ? "logout" : "login"
+                    isLoginSelector ? "logout" : "login"
                 }
             </button>
         </div>
