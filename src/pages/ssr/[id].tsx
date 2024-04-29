@@ -38,7 +38,13 @@ export const getServerSideProps = async (context: any) => {
   const data: UserType = await response.json();
   console.log('SSR data:', data)
 
-  return {
-    props: { data }
-  };
+  if (response.status !== 200) {
+    return {
+      notFound: true
+    }
+  } else {
+    return {
+      props: { data },
+    }
+  }
 }
