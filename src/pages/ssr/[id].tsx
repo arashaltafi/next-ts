@@ -1,3 +1,4 @@
+import { redirect } from 'next/dist/server/api-utils'
 import React from 'react'
 
 type UserType = {
@@ -38,9 +39,15 @@ export const getServerSideProps = async (context: any) => {
   const data: UserType = await response.json();
   console.log('SSR data:', data)
 
-  if (response.status !== 200) {
+  if (response.status === 404) {
     return {
       notFound: true
+    }
+  } else if (response.status !== 200) {
+    return {
+      redirect: {
+        destination: '/'
+      }
     }
   } else {
     return {
