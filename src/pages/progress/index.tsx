@@ -1,4 +1,5 @@
 import { convertMilliSecondToHoursMinute } from '@/utils/Helper'
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
@@ -9,6 +10,7 @@ const Progress = () => {
 
     const [time, setTime] = useState<number>(maxTime)
     const [percentage, setPercentage] = useState<number>(100)
+    const router = useRouter()
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -21,8 +23,11 @@ const Progress = () => {
     }, [])
 
     useEffect(() => {
+        if (time < 0) return;
+        
         const calculatedPercentage = (time / maxTime) * 100
         setPercentage(calculatedPercentage)
+        router.push('/progress?time=' + time)
     }, [time])
 
     const handleResend = () => {
