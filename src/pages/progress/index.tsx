@@ -24,7 +24,7 @@ const Progress = () => {
 
     useEffect(() => {
         if (time < 0) return;
-        
+
         const calculatedPercentage = (time / maxTime) * 100
         setPercentage(calculatedPercentage)
         router.push('/progress?time=' + time)
@@ -37,6 +37,11 @@ const Progress = () => {
     return (
         <div className='flex flex-col items-center justify-start w-full h-screen gap-16'>
             <h1 className='text-6xl'>Progress Sample</h1>
+
+            <div className='relative'>
+                <p className='top-0 bottom-0 left-0 right-0'>123</p>
+                <span className='absolute -left-1 right-0 top-2 bottom-0 w-10 h-0.5 bg-red-500 rounded-full -rotate-12' />
+            </div>
 
             <h2>
                 {
