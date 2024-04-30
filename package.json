@@ -27,6 +27,7 @@
     "next-video": "^1.0.0",
     "react": "^18.2.0",
     "react-advanced-cropper": "^0.19.6",
+    "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18.2.0",
     "react-draggable": "^4.4.6",
     "react-easy-crop": "^5.0.6",
