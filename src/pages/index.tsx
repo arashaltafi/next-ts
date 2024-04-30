@@ -46,6 +46,12 @@ const index = () => {
         <li className="hover:text-yellow-400">
           <Link href="/reactQuery">Sample reactQuery for CSR</Link>
         </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/progress">Sample Progress</Link>
+        </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/internetSpeed">Internet Speed</Link>
+        </li>
       </ul>
     </div>
   )
