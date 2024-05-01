@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 
 type UserType = {
@@ -11,6 +12,7 @@ interface PropsType {
 const SearchApi = (props: PropsType) => {
     const [searchApi, setSearchApi] = useState<string>('')
     const [result, setResult] = useState<any>(null)
+    const router = useRouter()
 
     const handleSubmit = (e: any) => {
         e.preventDefault()
@@ -22,6 +24,10 @@ const SearchApi = (props: PropsType) => {
             cache: 'no-store',
             next: { revalidate: 10 }
         })
+        if (response.status === 200) {
+            router.push('/searchApi?text=' + searchApi)
+        }
+
         const data = await response.json()
         console.log(data)
         setResult(data)
