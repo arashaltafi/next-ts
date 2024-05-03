@@ -4,6 +4,7 @@ import './globals.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'react-toastify/dist/ReactToastify.css';
 import ReduxProvider from '@/lib/provider';
+import NextAuthProvider from '@/lib/NextAuthProvider';
 
 export const metadata: Metadata = {
   title: 'NextJs 14',
@@ -24,7 +25,9 @@ export default function RootLayout({
       <body className={`bg-slate-900 text-slate-200 ${vazirFont.className}`}>
         <main className='px-8 py-6'>
           <ReduxProvider>
-            {children}
+            <NextAuthProvider>
+              {children}
+            </NextAuthProvider>
           </ReduxProvider>
         </main>
       </body>
