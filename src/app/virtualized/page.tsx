@@ -24,7 +24,7 @@ const ReactVirtualized = () => {
         const item = items[index];
         return (
             <div key={key} style={style} className='flex flex-col items-center justify-center'>
-                <p className={`mt-2 px-8 py-4 ${isScrolling ? 'text-red-500' : 'text-white'}`}>
+                <p className={`mt-2 px-8 py-4 ${isScrolling ? 'text-blue-400' : 'text-white'}`}>
                     {
                         isScrolling ? 'Loading...' : item.name
                     }
