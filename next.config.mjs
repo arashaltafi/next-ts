@@ -17,4 +17,19 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default {
+  ...nextConfig,
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.module.rules.push({
+        test: /\.node$/,
+        use: 'ignore-loader',
+      });
+    }
+
+    // Exclude canvas.node from being parsed
+    config.module.noParse = /\.node$/;
+
+    return config;
+  },
+};
