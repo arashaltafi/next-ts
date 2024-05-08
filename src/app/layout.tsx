@@ -9,7 +9,10 @@ import NextAuthProvider from '@/lib/NextAuthProvider';
 export const metadata: Metadata = {
   metadataBase: new URL('https://app.arashaltafi.ir'),
   keywords: ['NextJs', 'NextJs 13', 'NextJs 14'],
-  title: 'NextJs 14',
+  title: {
+    default: 'NextJs 14 App',
+    template: '%s | NextJs 14 App',
+  },
   description: 'Sample NextJs 14 app',
 }
 
