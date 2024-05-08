@@ -7,6 +7,8 @@ import ReduxProvider from '@/lib/provider';
 import NextAuthProvider from '@/lib/NextAuthProvider';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://app.arashaltafi.ir'),
+  keywords: ['NextJs', 'NextJs 13', 'NextJs 14'],
   title: 'NextJs 14',
   description: 'Sample NextJs 14 app',
 }
