@@ -19,6 +19,7 @@ const nextConfig = {
 
 export default {
   ...nextConfig,
+  //react-pdf-viewer
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.module.rules.push({
