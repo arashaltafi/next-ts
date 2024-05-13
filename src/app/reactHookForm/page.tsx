@@ -48,7 +48,7 @@ const ReactHookForm = () => {
         <div className='flex flex-col gap-8 items-center justify-start w-full'>
             <h1>ReactHookForm Sample</h1>
 
-            <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-4'>
+            <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-4' autoComplete='off'>
                 <label>FirstName:</label>
                 <input className='p-3 m-2 text-black text-lg' type="text" placeholder='Enter FirstName ...' {...register('firstName', { required: true, minLength: 2, maxLength: 10 })} />
                 {errors.firstName && <p className='text-red-500'>{errors.firstName?.message}</p>}

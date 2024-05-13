@@ -40,6 +40,7 @@
     "bootstrap": "^5.3.3",
     "emoji-picker-element": "^1.21.2",
     "emoji-picker-react": "^4.9.2",
+    "formik": "^2.4.6",
     "framer-motion": "^11.0.28",
     "gsap": "^3.8.0",
     "html2canvas": "^1.4.1",
