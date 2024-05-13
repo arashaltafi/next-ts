@@ -45,12 +45,13 @@ const ImageComponent = () => {
                     className='rounded-xl shadow-md shadow-red-500'
                     width={500}
                     height={500}
-                    src='/bg.jpg'
+                    src='/bg1.jpg'
                     alt='Arash'
                     placeholder='blur'
                     blurDataURL='/bg.jpg'
-                    loading='lazy'
-                    quality='1'
+                    loading='eager'
+                    priority
+                    quality='100'
                     fill={false}
                     onLoad={() => console.log('onLoad')}
                     onError={() => console.log('onError')}
