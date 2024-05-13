@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import React from 'react'
 
 const NotFound = () => {
@@ -7,3 +8,10 @@ const NotFound = () => {
 }
 
 export default NotFound
+
+export const metaData: Metadata = {
+  title: {
+    absolute: 'Not Found'
+  },
+  description: 'Not Found',
+}
