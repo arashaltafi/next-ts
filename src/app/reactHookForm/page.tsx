@@ -75,8 +75,9 @@ const ReactHookForm = () => {
 
                 <label>Gender Selection:</label>
                 <select {...register("gender")} className='text-black'>
+                    <option selected disabled hidden className='text-black' value="">Please Select</option>
                     <option className='text-black' value="female">female</option>
-                    <option selected className='text-black' value="male">male</option>
+                    <option className='text-black' value="male">male</option>
                     <option className='text-black' value="other">other</option>
                 </select>
                 {errors.gender && <p className='text-red-500'>{errors.gender?.message}</p>}
