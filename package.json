@@ -65,6 +65,7 @@
     "react-spring-carousel": "^2.0.19",
     "react-toastify": "^10.0.5",
     "react-virtualized": "^9.22.5",
+    "reactflow": "^11.11.3",
     "redux": "^5.0.1",
     "sass": "^1.74.1",
     "styled-components": "^6.1.8",
