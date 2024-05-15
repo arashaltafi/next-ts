@@ -2,14 +2,32 @@
 
 import React from 'react'
 import 'mapbox-gl/dist/mapbox-gl.css';
-import Map from 'react-map-gl';
+import Map, { Source, Layer } from 'react-map-gl';
+import type { CircleLayer } from 'react-map-gl';
+import type { FeatureCollection } from 'geojson';
 
 const MapboxSample = () => {
     const [viewState, setViewState] = React.useState({
         latitude: 35.7009447852995,
         longitude: 51.39116262864598,
         zoom: 18
-    });
+    })
+
+    const geojson: FeatureCollection = {
+        type: 'FeatureCollection',
+        features: [
+            { type: 'Feature', geometry: { type: 'Point', coordinates: [51.39116262864598, 35.7009447852995] } }
+        ]
+    };
+
+    const layerStyle: CircleLayer = {
+        id: 'point',
+        type: 'circle',
+        paint: {
+            'circle-radius': 50,
+            'circle-color': '#f00'
+        }
+    };
 
     return (
         <div className='w-full h-screen flex flex-col gap-16 items-center justify-start'>
@@ -33,7 +51,11 @@ const MapboxSample = () => {
                     onMove={evt => setViewState(evt.viewState)}
                     cursor='url(/cursor.svg), auto'
                     mapStyle="mapbox://styles/mapbox/streets-v9" //dark-v10   -   streets-v9
-                />
+                >
+                    <Source id="my-data" type="geojson" data={geojson}>
+                        <Layer {...layerStyle} />
+                    </Source>
+                </Map>
             </div>
         </div>
     )
