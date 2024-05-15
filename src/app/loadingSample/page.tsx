@@ -20,6 +20,8 @@ const LoadingSample = async () => {
 }
 
 const callApi = async () => {
+    //set delay for 2 seconds
+    await new Promise((resolve) => setTimeout(resolve, 2000));
     const response = await fetch('https://arashaltafi.ir/test_200.php', {
         next: { revalidate: 5 }, //It's updated every 10 seconds when you call
         cache: 'no-store'
