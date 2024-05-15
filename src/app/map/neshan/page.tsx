@@ -4,6 +4,7 @@ import React, { useRef } from 'react'
 import NeshanMap, { NeshanMapRef } from "@neshan-maps-platform/react-openlayers"
 import "@neshan-maps-platform/react-openlayers/dist/style.css"
 
+// https://platform.neshan.org/sdk/%DA%A9%D8%A7%D9%85%D9%BE%D9%88%D9%86%D9%86%D8%AA-reactjs/
 // npm install @neshan-maps-platform/react-openlayers
 // npm install @neshan-maps-platform/ol
 // npm install @types/ol@5

@@ -2,8 +2,10 @@
 
 import React from 'react'
 import 'mapbox-gl/dist/mapbox-gl.css';
-import Map, { AttributionControl, FullscreenControl, GeolocateControl, Marker, ScaleControl } from 'react-map-gl';
+import Map, { FullscreenControl, GeolocateControl, Marker, ScaleControl } from 'react-map-gl';
 
+// https://visgl.github.io/react-map-gl/docs/get-started
+// npm install react-map-gl mapbox-gl @types/mapbox-gl
 const MapboxSample = () => {
     const [viewState, setViewState] = React.useState({
         latitude: 35.7009447852995,
