@@ -2,9 +2,7 @@
 
 import React from 'react'
 import 'mapbox-gl/dist/mapbox-gl.css';
-import Map, { Source, Layer } from 'react-map-gl';
-import type { CircleLayer } from 'react-map-gl';
-import type { FeatureCollection } from 'geojson';
+import Map, { AttributionControl, FullscreenControl, GeolocateControl, Marker, ScaleControl } from 'react-map-gl';
 
 const MapboxSample = () => {
     const [viewState, setViewState] = React.useState({
@@ -12,22 +10,6 @@ const MapboxSample = () => {
         longitude: 51.39116262864598,
         zoom: 18
     })
-
-    const geojson: FeatureCollection = {
-        type: 'FeatureCollection',
-        features: [
-            { type: 'Feature', geometry: { type: 'Point', coordinates: [51.39116262864598, 35.7009447852995] } }
-        ]
-    };
-
-    const layerStyle: CircleLayer = {
-        id: 'point',
-        type: 'circle',
-        paint: {
-            'circle-radius': 50,
-            'circle-color': '#f00'
-        }
-    };
 
     return (
         <div className='w-full h-screen flex flex-col gap-16 items-center justify-start'>
@@ -42,6 +24,7 @@ const MapboxSample = () => {
                     longitude={51.39116262864598}
                     cursor='url(/cursor.svg), auto'
                     mapStyle="mapbox://styles/mapbox/dark-v10" //dark-v10   -   streets-v9
+                    attributionControl={false}
                 />
 
                 <Map
@@ -51,10 +34,14 @@ const MapboxSample = () => {
                     onMove={evt => setViewState(evt.viewState)}
                     cursor='url(/cursor.svg), auto'
                     mapStyle="mapbox://styles/mapbox/streets-v9" //dark-v10   -   streets-v9
+                    attributionControl={false}
                 >
-                    <Source id="my-data" type="geojson" data={geojson}>
-                        <Layer {...layerStyle} />
-                    </Source>
+                    <Marker longitude={51.39116262864598} latitude={35.7009447852995} anchor="bottom" >
+                        <img src="/cursor.svg" />
+                    </Marker>
+                    <FullscreenControl />
+                    <GeolocateControl />
+                    <ScaleControl />
                 </Map>
             </div>
         </div>
