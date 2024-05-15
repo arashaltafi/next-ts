@@ -14,7 +14,7 @@ const NeshanSample = () => {
         <div className='w-full h-screen flex flex-col gap-16 items-center justify-start'>
             <h1 className='text-6xl'>Neshan Sample</h1>
 
-            <div className='flex flex-col md:flex-row gap-8 items-center justify-between w-full'>
+            <div className='flex flex-col md:flex-row gap-8 items-center justify-center md:justify-between w-full'>
                 <NeshanMap
                     className='w-full h-80'
                     ref={mapRef}
