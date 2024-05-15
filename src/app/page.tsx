@@ -6,6 +6,7 @@ import styles from "./styles/Home.module.css"
 import { Button } from "@nextui-org/button";
 import { NextUIProvider } from "@nextui-org/system";
 import { Avatar } from '@nextui-org/react'
+import { useEffect } from 'react';
 
 const Home = () => {
 
@@ -14,6 +15,23 @@ const Home = () => {
   const handleClick = () => {
     router.push('./post')
   }
+
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('/service-worker.js')
+        .then(registration => {
+          console.log('Service worker registered:', registration);
+        }
+        )
+        .catch(error => {
+          console.log('Service worker registration failed:', error);
+        }
+        );
+    } else {
+      console.log('Service workers are not supported in this browser.');
+    }
+  }, [])
 
   return (
     <div
