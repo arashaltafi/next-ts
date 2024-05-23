@@ -173,6 +173,9 @@ const Home = () => {
           <Link href="/print">Print Sample</Link>
         </li>
         <li className="hover:text-yellow-400">
+          <Link href="/imageFilter">imageFilter Sample</Link>
+        </li>
+        <li className="hover:text-yellow-400">
           <button onClick={() => router.push('/not-found')}>Not Found 1</button>
           {/* in server component logic -> notFound() */}
         </li>
