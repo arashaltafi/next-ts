@@ -34,6 +34,21 @@ const Print = () => {
                     className='text-xl text-white bg-red-500 hover:bg-red-600 rounded-lg px-6 py-3 transition-all print:hidden'>
                     Print
                 </button>
+
+                <label
+                    className='text-xl self-start'
+                    htmlFor="text">
+                    prevented copy / paste / cute
+                </label>
+                <input
+                    id='text'
+                    className='text-xl px-8 py-4 w-full text-black'
+                    type='text'
+                    placeholder='Enter Text'
+                    onPaste={e => e.preventDefault()}
+                    onCopy={e => e.preventDefault()}
+                    onCut={e => e.preventDefault()}
+                />
             </div>
         </div>
     )
