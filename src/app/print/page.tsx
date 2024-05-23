@@ -49,6 +49,12 @@ const Print = () => {
                     onCopy={e => e.preventDefault()}
                     onCut={e => e.preventDefault()}
                 />
+
+                <h3 
+                    className='text-8xl bg-[url("https://arashaltafi.ir/arash.jpg")] bg-cover bg-center bg-no-repeat bg-clip-text text-transparent'
+                >
+                    Arash
+                </h3>
             </div>
         </div>
     )
