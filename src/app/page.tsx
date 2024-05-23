@@ -155,6 +155,12 @@ const Home = () => {
           <Link href="/diagram">Diagram Sample</Link>
         </li>
         <li className="hover:text-yellow-400">
+          <Link href="/map/google">Google Sample</Link>
+        </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/map/google2">Google iframe Sample</Link>
+        </li>
+        <li className="hover:text-yellow-400">
           <Link href="/map/neshan">Neshan Sample</Link>
         </li>
         <li className="hover:text-yellow-400">

@@ -7,7 +7,7 @@ interface UserType {
 }
 
 const useServer = async () => {
-    const data = await getData();
+    const data =  getData();
 
     return (
         <div className='flex flex-col items-center justify-center gap-8 w-full px-16 py-8'>
