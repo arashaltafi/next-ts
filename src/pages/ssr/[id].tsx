@@ -1,4 +1,4 @@
-import { redirect } from 'next/dist/server/api-utils'
+import Head from 'next/head'
 import React from 'react'
 
 type UserType = {
@@ -13,14 +13,20 @@ interface PropsType {
 
 const SampleSSR = (props: PropsType) => {
   return (
-    <div className='flex flex-col items-center justify-center gap-8 w-full px-16 py-8'>
-      <h1 className='font-bold text-3xl'>Sample SSR rendering in PageRouter</h1>
-      <p>server side rendering, create data in server for each run time (eact time)</p>
-      <p>its good for pages to have dynamic data for each user</p>
-      <h2 className='text-lg'><span className='text-green-500'>id:</span> {props.data.id}</h2>
-      <h2 className='text-lg'><span className='text-green-500'>title:</span> {props.data.title}</h2>
-      <h2 className='text-lg'><span className='text-green-500'>body:</span> {props.data.body}</h2>
-    </div>
+    <>
+      <Head>
+        <title>{props?.data?.title}</title>
+        <meta name="description" content={props?.data?.body} />
+      </Head>
+      <div className='flex flex-col items-center justify-center gap-8 w-full px-16 py-8'>
+        <h1 className='font-bold text-3xl'>Sample SSR rendering in PageRouter</h1>
+        <p>server side rendering, create data in server for each run time (eact time)</p>
+        <p>its good for pages to have dynamic data for each user</p>
+        <h2 className='text-lg'><span className='text-green-500'>id:</span> {props.data.id}</h2>
+        <h2 className='text-lg'><span className='text-green-500'>title:</span> {props.data.title}</h2>
+        <h2 className='text-lg'><span className='text-green-500'>body:</span> {props.data.body}</h2>
+      </div>
+    </>
   )
 }
 
