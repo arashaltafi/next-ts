@@ -48,6 +48,14 @@ const index = () => {
         <li className="hover:text-yellow-400">
           <Link href="/internetSpeed">Internet Speed</Link>
         </li>
+        <li className="hover:text-yellow-400">
+          <Link href={{
+            pathname: '/dynamicSegments2',
+            query: {
+              id: 123
+            }
+          }}>dynamicSegment2</Link>
+        </li>
       </ul>
     </div>
   )
