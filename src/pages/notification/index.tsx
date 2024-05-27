@@ -48,8 +48,8 @@ const NotificationSample = () => {
         } else {
             alert('no access')
         }
-    
-    
+
+
         // new Notification(title, {
         //     body: body,
         //     dir: 'ltr',
