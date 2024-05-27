@@ -10,6 +10,15 @@ const nextConfig = {
       },
     ],
   },
+  redirects: async () => {
+    return [
+      {
+        source: '/blog1',
+        destination: '/',
+        permanent: true,
+      },
+    ];
+  },
   env: {
     GITHUB_APP_CLIENT_ID: 'Iv23liniCGdWWMhnaBIx',
     GITHUB_APP_CLIENT_SECRET: 'ebbXXXXXXX5ad0dXXXXXXXXXX9a940XXXXXXXa',
