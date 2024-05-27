@@ -10,7 +10,7 @@ const index = () => {
 
       <ul className="flex flex-col gap-6 items-center justify-center mt-16">
         <li className="hover:text-yellow-400">
-          <Link href="/ssr">{`ssr => Server Side Rendering (Page Router)`}</Link>
+          <Link href="/ssr/1">{`ssr => Server Side Rendering (Page Router)`}</Link>
         </li>
         <li className="hover:text-yellow-400">
           <Link href="/csr">{`csr => Client Side Rendering (Page Router)`}</Link>
