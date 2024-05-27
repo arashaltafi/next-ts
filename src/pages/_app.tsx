@@ -3,6 +3,7 @@ import './globals.css'
 import { QueryClient, QueryClientProvider } from "react-query";
 import App, { AppContext, AppInitialProps, AppProps } from 'next/app'
 import { Roboto } from 'next/font/google'
+import Script from 'next/script'
 
 type AppOwnProps = { example: string }
 
@@ -21,6 +22,7 @@ const MyApp = ({ Component, pageProps, example }: AppProps & AppOwnProps) => {
             <QueryClientProvider client={queryClient}>
                 <p>Data: {example}</p>
                 <Component {...pageProps} />
+                <Script src="/script.js" />
             </QueryClientProvider>
         </ReduxProvider>
     </div>
