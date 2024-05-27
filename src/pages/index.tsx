@@ -5,11 +5,7 @@ const index = () => {
   return (
     <div className="flex flex-col gap-8">
       <p className="text-3xl text-center">
-        Next Js 12
-      </p>
-
-      <p className={`text-3xl text-center`}>
-        نکست جی اس 12
+        Next Js Pages Router
       </p>
 
       <ul className="flex flex-col gap-6 items-center justify-center mt-16">
