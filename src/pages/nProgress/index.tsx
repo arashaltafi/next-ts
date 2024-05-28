@@ -2,6 +2,7 @@ import React from 'react'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
+// npm i nprogress
 const index = () => {
 
   const startProgress = () => {

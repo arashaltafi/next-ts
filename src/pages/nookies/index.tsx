@@ -1,6 +1,7 @@
 import React from 'react'
 import { parseCookies, setCookie, destroyCookie } from 'nookies'
 
+// npm i nookies
 const Nookies = () => {
     const cookieName = 'NookiesSample'
 
