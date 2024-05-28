@@ -34,3 +34,24 @@
         font-family: 'vazir-medium', 'vazir-light', 'vazir-bold' !important;
     }
 }
+
+@layer components {
+    .blobImage {
+        animation: blob 4s ease-in infinite;
+    }
+
+    @keyframes blob {
+        0% {
+            border-radius: 25% 15% 25% 75% / 13% 47% 13% 52%;
+        }
+        25% {
+            border-radius: 25% 25% 25% 25% / 18% 11% 25% 14%;
+        }
+        50% {
+            border-radius: 25% 25% 25% 75% / 48% 47% 13% 14%;
+            }
+        100% {
+            border-radius: 25% 15% 25% 75% / 13% 47% 13% 52%;
+        }
+    }
+}
