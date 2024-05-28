@@ -33,6 +33,22 @@
         @apply bg-slate-200 dark:bg-slate-900 text-slate-900 dark:text-slate-100;
         font-family: 'vazir-medium', 'vazir-light', 'vazir-bold' !important;
     }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
 }
 
 @layer components {

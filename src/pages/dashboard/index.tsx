@@ -1,7 +1,10 @@
+import Modal from '@/components/Modal'
+import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 
 const Dashboard = ({ list }: { list: { id: number, name: string, item: string[] | undefined }[] }) => {
   const [visibleItems, setVisibleItems] = useState<number[]>([0])
+  const [showModal, setShowModal] = useState(false)
 
   const handleToggleVisibility = (id: number) => {
     if (visibleItems.includes(id)) {
@@ -11,27 +14,49 @@ const Dashboard = ({ list }: { list: { id: number, name: string, item: string[] 
     }
   }
 
+  const handleToggleVisibility2 = (id: number) => {
+    setVisibleItems([id])
+  }
+
   useEffect(() => {
     console.log(visibleItems)
   }, [visibleItems])
 
   return (
-    <div className='select-none flex flex-col items-center justify-start gap-8 w-full'>
+    <div className={`select-none flex flex-col items-center justify-start gap-8 w-full`}>
       {
         list.map((item: any) => (
           <div
             key={item.id}
             className='w-2/3 bg-red-500 font-sans rounded-lg flex flex-col items-center justify-center gap-8 py-6 px-8'>
             <div className='w-full flex flex-row-reverse justify-between gap-8'>
-              <p className='text-lg'>{item.name}</p>
+              <div className='flex gap-2 items-center justify-center'>
+                <p className='text-lg'>{item.name}</p>
+                <Image
+                  className='invert'
+                  src={`Widget.svg`}
+                  alt='Widget'
+                  width={20}
+                  height={20}
+                />
+              </div>
               {
                 item.item && (
-                  <p
-                    className='text-lg cursor-pointer px-3 py-2 bg-sky-600 rounded-lg'
-                    onClick={() => handleToggleVisibility(item.id)}
-                  >
-                    تعداد: {item.item.length}
-                  </p>
+                  <div className='flex gap-8 items-center justify-center'>
+                    <Image
+                      className='invert'
+                      src={`${visibleItems.includes(item.id) ? '/arrow-down.svg' : '/arrow-up.svg'}`}
+                      alt='arrow'
+                      width={20}
+                      height={20}
+                    />
+                    <p
+                      className='text-lg cursor-pointer px-3 py-2 bg-sky-600 rounded-lg'
+                      onClick={() => handleToggleVisibility(item.id)}
+                    >
+                      تعداد: {item.item.length}
+                    </p>
+                  </div>
                 )
               }
             </div>
@@ -48,6 +73,15 @@ const Dashboard = ({ list }: { list: { id: number, name: string, item: string[] 
             }
           </div>
         ))
+      }
+      <button
+        className='bg-green-500 hover:bg-green-600 transition-all px-8 py-4 rounded-lg'
+        onClick={() => setShowModal(true)}
+      >
+        open modal</button>
+
+      {
+        showModal && <Modal setShowModal={setShowModal} />
       }
     </div>
   )
