@@ -4,8 +4,16 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import App, { AppContext, AppInitialProps, AppProps } from 'next/app'
 import { Roboto } from 'next/font/google'
 import Script from 'next/script'
+import Header from '@/components/Header';
+import React from 'react';
+import Footer from '@/components/Footer';
 
-type AppOwnProps = { example: string | undefined }
+enum ComponentEnum {
+    HEADER = 'Header',
+    FOOTER = 'Footer'
+}
+
+type AppOwnProps = { example: string | undefined | ComponentEnum }
 
 const roboto = Roboto({
     weight: ['400', '700'],
@@ -21,7 +29,11 @@ const MyApp = ({ Component, pageProps, example }: AppProps & AppOwnProps) => {
         <ReduxProvider>
             <QueryClientProvider client={queryClient}>
                 {
-                    example && <h2>{example}</h2>
+                    example && (
+                        example === ComponentEnum.HEADER ? <Header /> : 
+                        example === ComponentEnum.FOOTER ? <Footer /> : 
+                        example
+                    )
                 }
                 <Component {...pageProps} />
                 <Script src="/script.js" />
@@ -36,11 +48,10 @@ MyApp.getInitialProps = async (
 ): Promise<AppOwnProps & AppInitialProps> => {
     const ctx = await App.getInitialProps(context)
 
-    console.log('context.router.route:', context.router.route)
     if (context.router.route === '/') {
         return { ...ctx, example: 'home' }
     } else if (context.router.route === '/dashboard') {
-        return { ...ctx, example: 'dashboard' }
+        return { ...ctx, example: ComponentEnum.HEADER }
     } else {
         return { ...ctx, example: undefined }
     }
