@@ -35,7 +35,9 @@ const MyApp = ({ Component, pageProps, example }: AppProps & AppOwnProps) => {
                         example
                     )
                 }
-                <Component className='px-16 py-8' {...pageProps} />
+                <main className='px-16 py-8'>
+                    <Component {...pageProps} />
+                </main>
                 <Script src="/script.js" />
             </QueryClientProvider>
         </ReduxProvider>
