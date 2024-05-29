@@ -5,7 +5,7 @@ import App, { AppContext, AppInitialProps, AppProps } from 'next/app'
 import { Roboto } from 'next/font/google'
 import Script from 'next/script'
 
-type AppOwnProps = { example: string }
+type AppOwnProps = { example: string | undefined }
 
 const roboto = Roboto({
     weight: ['400', '700'],
@@ -20,7 +20,9 @@ const MyApp = ({ Component, pageProps, example }: AppProps & AppOwnProps) => {
     return <div className={`bg-slate-900 text-slate-200 w-full min-h-screen px-16 py-8 ${roboto.className}`}>
         <ReduxProvider>
             <QueryClientProvider client={queryClient}>
-                <p>Data: {example}</p>
+                {
+                    example && <h2>{example}</h2>
+                }
                 <Component {...pageProps} />
                 <Script src="/script.js" />
             </QueryClientProvider>
@@ -34,5 +36,12 @@ MyApp.getInitialProps = async (
 ): Promise<AppOwnProps & AppInitialProps> => {
     const ctx = await App.getInitialProps(context)
 
-    return { ...ctx, example: 'data' }
+    console.log('context.router.route:', context.router.route)
+    if (context.router.route === '/') {
+        return { ...ctx, example: 'home' }
+    } else if (context.router.route === '/dashboard') {
+        return { ...ctx, example: 'dashboard' }
+    } else {
+        return { ...ctx, example: undefined }
+    }
 }
