@@ -25,7 +25,7 @@ const roboto = Roboto({
 const MyApp = ({ Component, pageProps, example }: AppProps & AppOwnProps) => {
     const queryClient = new QueryClient();
 
-    return <div className={`bg-slate-900 text-slate-200 w-full min-h-screen px-16 py-8 ${roboto.className}`}>
+    return <div className={`bg-slate-900 text-slate-200 w-full min-h-screen ${roboto.className}`}>
         <ReduxProvider>
             <QueryClientProvider client={queryClient}>
                 {
@@ -35,7 +35,7 @@ const MyApp = ({ Component, pageProps, example }: AppProps & AppOwnProps) => {
                         example
                     )
                 }
-                <Component {...pageProps} />
+                <Component className='px-16 py-8' {...pageProps} />
                 <Script src="/script.js" />
             </QueryClientProvider>
         </ReduxProvider>
