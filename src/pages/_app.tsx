@@ -10,6 +10,7 @@ import Footer from '@/components/Footer';
 import { useRouter } from 'next/router';
 import nProgress from 'nprogress';
 import 'nprogress/nprogress.css';
+import { appWithTranslation } from 'next-i18next';
 
 enum ComponentEnum {
     HEADER = 'Header',
@@ -71,7 +72,7 @@ const MyApp = ({ Component, pageProps, example }: AppProps & AppOwnProps) => {
         </ReduxProvider>
     </div>
 }
-export default MyApp
+export default appWithTranslation(MyApp)
 
 MyApp.getInitialProps = async (
     context: AppContext

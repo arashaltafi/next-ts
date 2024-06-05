@@ -1,0 +1,5 @@
+{
+    "welcome": "Welcome",
+    "description": "This is an example of i18next integration in Next.js",
+    "test": "test"
+}
