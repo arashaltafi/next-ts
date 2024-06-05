@@ -5,8 +5,11 @@ import App, { AppContext, AppInitialProps, AppProps } from 'next/app'
 import { Roboto } from 'next/font/google'
 import Script from 'next/script'
 import Header from '@/components/Header';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Footer from '@/components/Footer';
+import { useRouter } from 'next/router';
+import nProgress from 'nprogress';
+import 'nprogress/nprogress.css';
 
 enum ComponentEnum {
     HEADER = 'Header',
@@ -24,15 +27,40 @@ const roboto = Roboto({
 
 const MyApp = ({ Component, pageProps, example }: AppProps & AppOwnProps) => {
     const queryClient = new QueryClient();
+    const router = useRouter();
+
+    useEffect(() => {
+        const handleRouteChangeStart = () => {
+            nProgress.start()
+        }
+
+        const handleRouteChangeComplete = () => {
+            nProgress.done()
+        }
+
+        const handleRouteChangeError = () => {
+            nProgress.done()
+        }
+
+        router.events.on('routeChangeStart', handleRouteChangeStart)
+        router.events.on('routeChangeComplete', handleRouteChangeComplete)
+        router.events.on('routeChangeError', handleRouteChangeError)
+
+        return () => {
+            router.events.off('routeChangeStart', handleRouteChangeStart)
+            router.events.off('routeChangeComplete', handleRouteChangeComplete)
+            router.events.off('routeChangeError', handleRouteChangeError)
+        }
+    }, [router])
 
     return <div className={`bg-slate-900 text-slate-200 w-full min-h-screen ${roboto.className}`}>
         <ReduxProvider>
             <QueryClientProvider client={queryClient}>
                 {
                     example && (
-                        example === ComponentEnum.HEADER ? <Header /> : 
-                        example === ComponentEnum.FOOTER ? <Footer /> : 
-                        example
+                        example === ComponentEnum.HEADER ? <Header /> :
+                            example === ComponentEnum.FOOTER ? <Footer /> :
+                                example
                     )
                 }
                 <main className='px-16 py-8'>
