@@ -36,18 +36,34 @@
 
     input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
+        -webkit-appearance: none;
+        margin: 0;
     }
-  
+
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
+        -webkit-appearance: none;
+        margin: 0;
     }
-  
+
     input[type=number] {
-      -moz-appearance: textfield;
+        -moz-appearance: textfield;
+    }
+
+
+    /* Custom styles for range input */
+    input[type="range"] {
+        @apply h-2 bg-red-400 hover:bg-red-500 transition-all rounded-md opacity-90 hover:opacity-100 outline-none;
+        -webkit-appearance: none;
+    }
+    
+    input[type="range"]::-webkit-slider-thumb {
+        @apply bg-indigo-600 hover:bg-indigo-700 size-5 rounded-full cursor-pointer transition-all;
+        -webkit-appearance: none;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        @apply bg-indigo-600 hover:bg-indigo-700 size-5 rounded-full cursor-pointer transition-all;
     }
 }
 
@@ -60,12 +76,15 @@
         0% {
             border-radius: 25% 15% 25% 75% / 13% 47% 13% 52%;
         }
+
         25% {
             border-radius: 25% 25% 25% 25% / 18% 11% 25% 14%;
         }
+
         50% {
             border-radius: 25% 25% 25% 75% / 48% 47% 13% 14%;
-            }
+        }
+
         100% {
             border-radius: 25% 15% 25% 75% / 13% 47% 13% 52%;
         }
