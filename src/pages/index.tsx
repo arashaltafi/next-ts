@@ -49,6 +49,33 @@ const index = () => {
           <Link href="/internetSpeed">Internet Speed</Link>
         </li>
         <li className="hover:text-yellow-400">
+          <Link href="/wave">react wavify</Link>
+        </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/video">Video Player</Link>
+        </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/audio">Audio Player</Link>
+        </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/three">ThreeJs</Link>
+        </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/three/sample1">ThreeJs Sample1</Link>
+        </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/three/sample2">ThreeJs Sample2</Link>
+        </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/screenShot">Screen Shot</Link>
+        </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/nProgress">nProgress Sample</Link>
+        </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/notification">Notification Sample</Link>
+        </li>
+        <li className="hover:text-yellow-400">
           <Link href={{
             pathname: '/dynamicSegments2',
             query: {
