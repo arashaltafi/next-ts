@@ -73,6 +73,7 @@
     "react-dom": "^18.2.0",
     "react-dom-confetti": "^0.2.0",
     "react-draggable": "^4.4.6",
+    "react-dropzone": "^14.2.3",
     "react-easy-crop": "^5.0.6",
     "react-hook-form": "^7.51.4",
     "react-i18next": "^14.1.2",
