@@ -28,10 +28,19 @@ const XlsxSample = () => {
     const handleExport = () => {
         // Convert JSON data to worksheet
         const worksheet = XLSX.utils.json_to_sheet(jsonData);
+
         // Create a new workbook
         const workbook = XLSX.utils.book_new();
+
+        // Set sheet direction to right-to-left
+        if(!workbook.Workbook) workbook.Workbook = {};
+        if(!workbook.Workbook.Views) workbook.Workbook.Views = [];
+        if(!workbook.Workbook.Views[0]) workbook.Workbook.Views[0] = {};
+        workbook.Workbook.Views[0].RTL = true;
+
         // Append the worksheet to the workbook
         XLSX.utils.book_append_sheet(workbook, worksheet, 'شیت 1');
+
         // Write the workbook to a binary string
         const workbookBinary = XLSX.write(workbook, { bookType: 'xlsx', type: 'binary' });
 
@@ -44,6 +53,7 @@ const XlsxSample = () => {
 
         // Create a Blob from the array buffer
         const blob = new Blob([buffer], { type: 'application/octet-stream' });
+
         // Use FileSaver to save the Blob as an XLSX file
         saveAs(blob, 'data.xlsx');
     };
