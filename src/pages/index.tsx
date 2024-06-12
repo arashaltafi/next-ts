@@ -105,6 +105,15 @@ const index = () => {
           <Link href="/nums2Persian">Nums2Persian Sample</Link>
         </li>
         <li className="hover:text-yellow-400">
+          <Link href="/csv">csv Sample</Link>
+        </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/xlsx1">xlsx1 Sample</Link>
+        </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/xlsx2">xlsx2 Sample</Link>
+        </li>
+        <li className="hover:text-yellow-400">
           <Link href={{
             pathname: '/dynamicSegments2',
             query: {
