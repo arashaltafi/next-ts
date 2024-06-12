@@ -1,7 +1,33 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const index = () => {
+
+  useEffect(() => {
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') {
+        document.title = 'Create Next App Hidden'
+        changeFavicon('/logo-next-dark.png')
+      }
+      if (document.visibilityState === 'visible') {
+        document.title = 'Create Next App'
+        changeFavicon('/logo-next.png')
+      }
+    })
+  }, [])
+
+  const changeFavicon = (link: string) => {
+    let favicon = document.querySelector('link[rel="icon"]') as HTMLLinkElement;
+    if (favicon) {
+      favicon.href = link
+    } else {
+      favicon = document.createElement('link')
+      favicon.rel = 'icon'
+      favicon.href = link
+      document.head.appendChild(favicon)
+    }
+  }
+
   return (
     <div className="flex flex-col gap-8">
       <p className="text-3xl text-center">
