@@ -9,7 +9,7 @@ const FullScreen = () => {
     }, [])
 
     return (
-        <div className='w-full min-h-screen flex items-center justify-start gap-16'>
+        <div className='w-full min-h-screen flex flex-col items-center justify-start gap-16'>
             <h1 className='text-5xl'>FullScreen</h1>
 
             <Image

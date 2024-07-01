@@ -120,6 +120,12 @@ const index = () => {
           <Link href="/customToast">customToast Sample</Link>
         </li>
         <li className="hover:text-yellow-400">
+          <Link href="/fullscreen">Full Screen Sample</Link>
+        </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/passwordGenerator">Password Generator</Link>
+        </li>
+        <li className="hover:text-yellow-400">
           <Link href={{
             pathname: '/dynamicSegments2',
             query: {
