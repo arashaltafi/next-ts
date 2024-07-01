@@ -126,6 +126,9 @@ const index = () => {
           <Link href="/passwordGenerator">Password Generator</Link>
         </li>
         <li className="hover:text-yellow-400">
+          <Link href="/delay">Delay Sample</Link>
+        </li>
+        <li className="hover:text-yellow-400">
           <Link href={{
             pathname: '/dynamicSegments2',
             query: {
