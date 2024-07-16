@@ -11,6 +11,8 @@ import { useRouter } from 'next/router';
 import nProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import { appWithTranslation } from 'next-i18next';
+import { ApolloProvider } from '@apollo/client';
+import client from '../lib/apolloClient';
 
 enum ComponentEnum {
     HEADER = 'Header',
@@ -65,7 +67,9 @@ const MyApp = ({ Component, pageProps, example }: AppProps & AppOwnProps) => {
                     )
                 }
                 <main className='px-16 py-8'>
-                    <Component {...pageProps} />
+                    <ApolloProvider client={client}>
+                        <Component {...pageProps} />
+                    </ApolloProvider>
                 </main>
                 <Script src="/script.js" />
             </QueryClientProvider>
