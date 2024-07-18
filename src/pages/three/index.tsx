@@ -26,7 +26,7 @@ const ThreeJs = () => {
                 }}
             >
                 <color attach="background" args={["#eee"]} />
-                <Environment preset="studio" />
+                {/* <Environment preset="studio" /> */}
                 <PerspectiveCamera makeDefault position={[2, 3.9, 4.1]} />
                 <OrbitControls />
                 {/* <Three2 position={[0, 0.1, 0]} /> */}

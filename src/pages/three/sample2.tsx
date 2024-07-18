@@ -21,7 +21,7 @@ const Sample2 = () => {
         <div className="flex flex-col gap-16 items-center justify-start w-full min-h-screen">
             <h1>ThreeJs</h1>
             <Canvas className='bg-white rounded-xl'>
-                <Environment preset="studio" />
+                {/* <Environment preset="studio" /> */}
                 <PerspectiveCamera makeDefault position={[2, 3.9, 4.1]} />
                 <OrbitControls />
                 <ContactShadows />

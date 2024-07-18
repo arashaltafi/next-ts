@@ -24,7 +24,7 @@ const Sample3 = () => {
                     height: "100%",
                 }}
             >
-                <Environment preset="studio" />
+                {/* <Environment preset="studio" /> */}
                 <PerspectiveCamera makeDefault position={[2, 3.9, 4.1]} />
                 <OrbitControls />
                 <Three4 position={[0, 0.1, 0]} />

@@ -18,7 +18,7 @@ const Sample1 = () => {
                 }}
             >
                 <color attach="background" args={["#eee"]} />
-                <Environment preset="studio" />
+                {/* <Environment preset="studio" /> */}
                 <PerspectiveCamera makeDefault position={[2, 3.9, 4.1]} />
                 <OrbitControls />
                 <ContactShadows />
