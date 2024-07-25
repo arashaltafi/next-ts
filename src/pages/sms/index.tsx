@@ -16,7 +16,7 @@ const SendSms = () => {
         <div className='flex flex-col gap-8 items-center justify-start w-full min-h-screen'>
             <h1 className='text-5xl'>Send SMS</h1>
 
-            <div className='flex items-center justify-center gap-8 mt-32'>
+            <div className='flex flex-col md:flex-row items-center justify-center gap-8 mt-32'>
                 <label className='text-2xl'>
                     Phone Number:
                 </label>
@@ -28,7 +28,7 @@ const SendSms = () => {
                     className='px-8 py-4 rounded-xl text-xl text-black'
                 />
             </div>
-            <div className='flex  items-center justify-center gap-8'>
+            <div className='flex flex-col md:flex-row items-center justify-center gap-8'>
                 <label className='text-2xl'>
                     Message:
                 </label>
