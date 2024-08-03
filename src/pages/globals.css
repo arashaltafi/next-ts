@@ -56,7 +56,7 @@
         @apply h-2 bg-red-400 hover:bg-red-500 transition-all rounded-md opacity-90 hover:opacity-100 outline-none;
         -webkit-appearance: none;
     }
-    
+
     input[type="range"]::-webkit-slider-thumb {
         @apply bg-indigo-600 hover:bg-indigo-700 size-5 rounded-full cursor-pointer transition-all;
         -webkit-appearance: none;
@@ -87,6 +87,30 @@
 
         100% {
             border-radius: 25% 15% 25% 75% / 13% 47% 13% 52%;
+        }
+    }
+
+
+
+
+
+    .typewriter {
+        display: inline-block;
+        white-space: pre-wrap;
+        border-right: 2px solid currentColor;
+        overflow: hidden;
+        animation: blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes blink-caret {
+
+        from,
+        to {
+            border-color: transparent;
+        }
+
+        50% {
+            border-color: currentColor;
         }
     }
 }

@@ -59,16 +59,16 @@ const base64ToBlob = (base64: string, contentType: string = 'application/pdf'): 
     return new Blob([byteArray], { type: contentType });
 };
 
-const convertImageToBase64 = (imagePath: string): Promise<string> => {
-    return new Promise((resolve, reject) => {
-        const fs = require('fs');
-        fs.readFile(imagePath, (err: any, data: any) => {
-            if (err) reject(err);
-            const base64String = Buffer.from(data).toString('base64');
-            resolve(base64String);
-        });
-    });
-}
+// const convertImageToBase64 = (imagePath: string): Promise<string> => {
+//     return new Promise((resolve, reject) => {
+//         const fs = require('fs');
+//         fs.readFile(imagePath, (err: any, data: any) => {
+//             if (err) reject(err);
+//             const base64String = Buffer.from(data).toString('base64');
+//             resolve(base64String);
+//         });
+//     });
+// }
 
 const convertImageUrlToBase64 = async (imageUrl: string): Promise<string> => {
     const response = await axios.get(imageUrl, { responseType: 'arraybuffer' });
@@ -76,27 +76,27 @@ const convertImageUrlToBase64 = async (imageUrl: string): Promise<string> => {
     return base64String;
 }
 
-const convertBase64ToImage = (base64String: string, outputPath: string): Promise<void> => {
-    return new Promise((resolve, reject) => {
-        const fs = require('fs');
-        const buffer = Buffer.from(base64String, 'base64');
-        fs.writeFile(outputPath, buffer, (err: any) => {
-            if (err) reject(err);
-            resolve();
-        });
-    });
-}
+// const convertBase64ToImage = (base64String: string, outputPath: string): Promise<void> => {
+//     return new Promise((resolve, reject) => {
+//         const fs = require('fs');
+//         const buffer = Buffer.from(base64String, 'base64');
+//         fs.writeFile(outputPath, buffer, (err: any) => {
+//             if (err) reject(err);
+//             resolve();
+//         });
+//     });
+// }
 
-const convertVideoToBase64 = (videoPath: string): Promise<string> => {
-    return new Promise((resolve, reject) => {
-        const fs = require('fs');
-        fs.readFile(videoPath, (err: any, data: any) => {
-            if (err) reject(err);
-            const base64String = Buffer.from(data).toString('base64');
-            resolve(base64String);
-        });
-    });
-}
+// const convertVideoToBase64 = (videoPath: string): Promise<string> => {
+//     return new Promise((resolve, reject) => {
+//         const fs = require('fs');
+//         fs.readFile(videoPath, (err: any, data: any) => {
+//             if (err) reject(err);
+//             const base64String = Buffer.from(data).toString('base64');
+//             resolve(base64String);
+//         });
+//     });
+// }
 
 const convertVideoUrlToBase64 = async (videoUrl: string): Promise<string> => {
     const response = await axios.get(videoUrl, { responseType: 'arraybuffer' });
@@ -104,16 +104,16 @@ const convertVideoUrlToBase64 = async (videoUrl: string): Promise<string> => {
     return base64String;
 }
 
-const convertBase64ToVideo = (base64String: string, outputPath: string): Promise<void> => {
-    return new Promise((resolve, reject) => {
-        const fs = require('fs');
-        const buffer = Buffer.from(base64String, 'base64');
-        fs.writeFile(outputPath, buffer, (err: any) => {
-            if (err) reject(err);
-            resolve();
-        });
-    });
-}
+// const convertBase64ToVideo = (base64String: string, outputPath: string): Promise<void> => {
+//     return new Promise((resolve, reject) => {
+//         const fs = require('fs');
+//         const buffer = Buffer.from(base64String, 'base64');
+//         fs.writeFile(outputPath, buffer, (err: any) => {
+//             if (err) reject(err);
+//             resolve();
+//         });
+//     });
+// }
 
 const convertBase64ToText = (base64String: string): string => {
     return Buffer.from(base64String, 'base64').toString('utf-8');
@@ -123,16 +123,16 @@ const convertTextToBase64 = (text: string): string => {
     return Buffer.from(text, 'utf-8').toString('base64');
 }
 
-const convertPdfToBase64 = (pdfPath: string): Promise<string> => {
-    return new Promise((resolve, reject) => {
-        const fs = require('fs');
-        fs.readFile(pdfPath, (err: any, data: any) => {
-            if (err) reject(err);
-            const base64String = Buffer.from(data).toString('base64');
-            resolve(base64String);
-        });
-    });
-}
+// const convertPdfToBase64 = (pdfPath: string): Promise<string> => {
+//     return new Promise((resolve, reject) => {
+//         const fs = require('fs');
+//         fs.readFile(pdfPath, (err: any, data: any) => {
+//             if (err) reject(err);
+//             const base64String = Buffer.from(data).toString('base64');
+//             resolve(base64String);
+//         });
+//     });
+// }
 
 const convertPdfUrlToBase64 = async (pdfUrl: string): Promise<string> => {
     const response = await axios.get(pdfUrl, { responseType: 'arraybuffer' });
@@ -140,31 +140,31 @@ const convertPdfUrlToBase64 = async (pdfUrl: string): Promise<string> => {
     return base64String;
 }
 
-const convertBase64ToPdf = (base64String: string, outputPath: string): Promise<void> => {
-    return new Promise((resolve, reject) => {
-        const fs = require('fs');
-        const buffer = Buffer.from(base64String, 'base64');
-        fs.writeFile(outputPath, buffer, (err: any) => {
-            if (err) reject(err);
-            resolve();
-        });
-    });
-}
+// const convertBase64ToPdf = (base64String: string, outputPath: string): Promise<void> => {
+//     return new Promise((resolve, reject) => {
+//         const fs = require('fs');
+//         const buffer = Buffer.from(base64String, 'base64');
+//         fs.writeFile(outputPath, buffer, (err: any) => {
+//             if (err) reject(err);
+//             resolve();
+//         });
+//     });
+// }
 
 export {
     generateRandomNumber,
     convertMilliSecondToHoursMinute,
     delay,
     base64ToBlob,
-    convertImageToBase64,
+    // convertImageToBase64,
     convertImageUrlToBase64,
-    convertBase64ToImage,
-    convertVideoToBase64,
+    // convertBase64ToImage,
+    // convertVideoToBase64,
     convertVideoUrlToBase64,
-    convertBase64ToVideo,
+    // convertBase64ToVideo,
     convertBase64ToText,
     convertTextToBase64,
-    convertPdfToBase64,
+    // convertPdfToBase64,
     convertPdfUrlToBase64,
-    convertBase64ToPdf,
+    // convertBase64ToPdf,
 }

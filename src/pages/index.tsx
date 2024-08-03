@@ -132,6 +132,9 @@ const index = () => {
           <Link href="/delay">Auto OTP Retrieval</Link>
         </li>
         <li className="hover:text-yellow-400">
+          <Link href="/typewriter">Type Writer</Link>
+        </li>
+        <li className="hover:text-yellow-400">
           <Link href={{
             pathname: '/dynamicSegments2',
             query: {
