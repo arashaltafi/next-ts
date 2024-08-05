@@ -135,6 +135,9 @@ const index = () => {
           <Link href="/typewriter">Type Writer</Link>
         </li>
         <li className="hover:text-yellow-400">
+          <Link href="/customInput">CustomInputs</Link>
+        </li>
+        <li className="hover:text-yellow-400">
           <Link href={{
             pathname: '/dynamicSegments2',
             query: {
