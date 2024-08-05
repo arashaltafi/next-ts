@@ -151,6 +151,41 @@ const convertPdfUrlToBase64 = async (pdfUrl: string): Promise<string> => {
 //     });
 // }
 
+const validateCard = (card: string) => {
+    if (typeof card === 'undefined'
+        || card === null
+        || card.length !== 16) {
+        return false;
+    }
+
+    let cardTotal = 0;
+    for (let i = 0; i < 16; i += 1) {
+        const c = Number(card[i]);
+        if (i % 2 === 0) {
+            cardTotal += ((c * 2 > 9) ? (c * 2) - 9 : (c * 2));
+        } else {
+            cardTotal += c;
+        }
+    }
+    return (cardTotal % 10 === 0);
+}
+
+const validateNationalCode = (code: string) => {
+    if (code.length !== 10 || /(\d)(\1){9}/.test(code)) return false;
+
+    let sum = 0,
+        chars = code.split(''),
+        lastDigit,
+        remainder;
+
+    for (let i = 0; i < 9; i++) sum += +chars[i] * (10 - i);
+
+    remainder = sum % 11;
+    lastDigit = remainder < 2 ? remainder : 11 - remainder;
+
+    return +chars[9] === lastDigit;
+};
+
 export {
     generateRandomNumber,
     convertMilliSecondToHoursMinute,
@@ -167,4 +202,6 @@ export {
     // convertPdfToBase64,
     convertPdfUrlToBase64,
     // convertBase64ToPdf,
+    validateCard,
+    validateNationalCode,
 }
