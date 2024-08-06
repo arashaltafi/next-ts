@@ -51,19 +51,22 @@ const customRange = () => {
                 onChange={setPointers1}
             />
 
-            <RoundSlider
-                pathStartAngle={0}
-                pathEndAngle={180}
-                pathRadius={150}
-                pathThickness={15}
-                pathBorder={2}
-                pathBorderColor={'#ff0000'}
-                textOffsetY={70}
-                textFontSize={24}
-                hideText={true}
-                pointers={pointers2}
-                onChange={setPointers2}
-            />
+            <div className='relative'>
+                <RoundSlider
+                    pathStartAngle={0}
+                    pathEndAngle={180}
+                    pathRadius={150}
+                    pathThickness={15}
+                    pathBorder={2}
+                    pathBorderColor={'#ff0000'}
+                    textOffsetY={70}
+                    textFontSize={24}
+                    hideText={true}
+                    pointers={pointers2}
+                    onChange={setPointers2}
+                />
+                <p className='absolute inset-0 flex items-center justify-center'>test</p>
+            </div>
         </div>
     )
 }
