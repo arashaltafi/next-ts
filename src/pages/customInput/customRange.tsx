@@ -5,7 +5,19 @@ import { RoundSlider, ISettingsPointer } from 'mz-react-round-slider'
 
 const customRange = () => {
 
-    const [pointers, setPointers] = useState<ISettingsPointer[]>([{
+    const [pointers1, setPointers1] = useState<ISettingsPointer[]>([{
+        value: 50,
+        radius: 15,
+        bgColor: '#ff0000',
+        bgColorDisabled: '#efefef',
+        bgColorSelected: '#00ff00',
+        bgColorHover: '#0000ff',
+        borderColor: '#ffff00',
+        border: 2,
+        disabled: false
+    }]);
+
+    const [pointers2, setPointers2] = useState<ISettingsPointer[]>([{
         value: 50,
         radius: 15,
         bgColor: '#ff0000',
@@ -35,8 +47,8 @@ const customRange = () => {
                 textSuffix={'°'}
                 textPrefix={' '}
                 hideText={false}
-                pointers={pointers}
-                onChange={setPointers}
+                pointers={pointers1}
+                onChange={setPointers1}
             />
 
             <RoundSlider
@@ -45,12 +57,12 @@ const customRange = () => {
                 pathRadius={150}
                 pathThickness={15}
                 pathBorder={2}
-                pathBorderColor={'#28586c'}
+                pathBorderColor={'#ff0000'}
                 textOffsetY={70}
                 textFontSize={24}
                 hideText={true}
-                pointers={pointers}
-                onChange={setPointers}
+                pointers={pointers2}
+                onChange={setPointers2}
             />
         </div>
     )
