@@ -9,6 +9,7 @@ const CustomInputs = () => {
             <Link className='mt-32 text-xl text-sky-500' href="/customInput/checkbox">CustomInput Checkbox</Link>
             <Link className='text-xl text-sky-500' href="/customInput/radiobutton">CustomInput Radio</Link>
             <Link className='text-xl text-sky-500' href="/customInput/range">CustomInput Range</Link>
+            <Link className='text-xl text-sky-500' href="/customInput/customRange">CustomInput customRange</Link>
         </div>
     )
 }

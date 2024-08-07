@@ -51,7 +51,7 @@ const customRange = () => {
                 onChange={setPointers1}
             />
 
-            <div className='relative'>
+            <div className='relative flex items-center justify-center'>
                 <RoundSlider
                     pathStartAngle={0}
                     pathEndAngle={180}
@@ -65,7 +65,7 @@ const customRange = () => {
                     pointers={pointers2}
                     onChange={setPointers2}
                 />
-                <p className='absolute inset-0 flex items-center justify-center'>test</p>
+                <p className='absolute bg-green-500'>test</p>
             </div>
         </div>
     )
