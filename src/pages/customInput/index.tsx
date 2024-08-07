@@ -10,6 +10,13 @@ const CustomInputs = () => {
             <Link className='text-xl text-sky-500' href="/customInput/radiobutton">CustomInput Radio</Link>
             <Link className='text-xl text-sky-500' href="/customInput/range">CustomInput Range</Link>
             <Link className='text-xl text-sky-500' href="/customInput/customRange">CustomInput customRange</Link>
+
+            <div style={{
+                width: '300px',
+                height: '150px',
+                borderTop: '10px solid #000',
+                borderRadius: '150px 150px 0 0',
+            }} />
         </div>
     )
 }
