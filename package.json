@@ -100,6 +100,7 @@
     "reactflow": "^11.11.3",
     "redux": "^5.0.1",
     "sass": "^1.74.1",
+    "sonner": "^1.5.0",
     "styled-components": "^6.1.8",
     "styled-jsx": "^5.1.2",
     "svg-captcha": "^1.4.0",
