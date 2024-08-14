@@ -39,6 +39,7 @@
     "@react-three/drei": "^9.108.4",
     "@react-three/fiber": "^8.16.8",
     "@reduxjs/toolkit": "^2.2.3",
+    "@sentry/nextjs": "^8.26.0",
     "@splinetool/react-spline": "^4.0.0",
     "@tsparticles/all": "^3.3.0",
     "@tsparticles/basic": "^3.3.0",

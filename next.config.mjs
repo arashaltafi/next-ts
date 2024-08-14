@@ -28,6 +28,11 @@ const nextConfig = {
     GITHUB_APP_CLIENT_SECRET: 'ebbXXXXXXX5ad0dXXXXXXXXXX9a940XXXXXXXa',
     NEXTAUTH_SECRET: 'mQ46qpFwfXXXXXXXXqlm19qBXXXXXXXXXXwerwXXXXXXXXnKjM=',
   },
+
+  org: "example-org",
+  project: "example-project",
+  authToken: process.env.SENTRY_AUTH_TOKEN,
+  silent: false,
 };
 
 export default {
