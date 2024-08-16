@@ -61,7 +61,7 @@ const page = () => {
         locale={persian_fa}
         calendar={persian}
         minDate="1403/1/1"
-        maxDate="1403/3/1"
+        maxDate={new Date()}
       />
 
       <h2 className='mt-64'>Calendar Sample Basic</h2>
