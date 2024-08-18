@@ -112,10 +112,7 @@ const FormSimple = () => {
                     className="mb-4 mt-4 desktop:mt-0"
                 />
                 <p className="text-gray900 leading-8 font-semibold text-[16px] mb-[6px]">
-                    ثبت‌نام در «ست»
-                </p>
-                <p className="text-gray900 leading-6 font-medium text-[12px] mb-6">
-                    سامانه توثیق الکترونیکی بانک صادرات
+                    تست تایتل
                 </p>
                 <CustomInputText
                     label="کد ملی"
