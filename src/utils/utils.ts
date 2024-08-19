@@ -19,6 +19,12 @@ export const checkOnlyNumber = (number: number | string) => {
     }
 }
 
+export const maskPhoneNumber = (phoneNumber: string | number | null | undefined): string => {
+    if (phoneNumber === undefined) return ""
+    if (phoneNumber === null) return ""
+    return phoneNumber.toString().slice(0, 6).padEnd(phoneNumber.toString().length, "*")
+}
+
 export const numberValidation = (value: string | number) => {
     let newValue = value.toString().replaceAll(",", "");
     if (newValue.match(onlyNumber) !== null) {
