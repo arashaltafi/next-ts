@@ -200,6 +200,9 @@ const Home = () => {
           <Link href="/useReducer">useReducer</Link>
         </li>
         <li className="hover:text-yellow-400">
+          <Link href="/animateHorizontal">animateHorizontal</Link>
+        </li>
+        <li className="hover:text-yellow-400">
           <button onClick={() => router.push('/not-found')}>Not Found 1</button>
           {/* in server component logic -> notFound() */}
         </li>
