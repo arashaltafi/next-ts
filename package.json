@@ -12,6 +12,7 @@
     "@amcharts/amcharts4": "^4.10.39",
     "@amcharts/amcharts5": "^5.10.1",
     "@apollo/client": "^3.10.8",
+    "@arashaltafi/react-toast": "^1.2.4",
     "@hookform/resolvers": "^3.3.4",
     "@neshan-maps-platform/ol": "^1.0.5",
     "@neshan-maps-platform/react-openlayers": "^3.0.1",

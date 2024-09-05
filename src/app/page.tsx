@@ -206,6 +206,12 @@ const Home = () => {
           <Link href="/textGsap">textGsap</Link>
         </li>
         <li className="hover:text-yellow-400">
+          <Link href="/pagination">pagination</Link>
+        </li>
+        <li className="hover:text-yellow-400">
+          <Link href="/toast-arash">toast-arash</Link>
+        </li>
+        <li className="hover:text-yellow-400">
           <button onClick={() => router.push('/not-found')}>Not Found 1</button>
           {/* in server component logic -> notFound() */}
         </li>
