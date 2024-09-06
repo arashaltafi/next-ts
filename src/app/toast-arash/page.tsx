@@ -12,7 +12,7 @@ const ToastArash = () => {
             <button
                 className='text-xl text-white bg-red-500 hover:bg-red-600 transition-all duration-200'
                 onClick={() => {
-                    showToast('Error toast', 'success', true, 100000, "/close-success.svg", "/close-error.svg")
+                    showToast('Error toast', 'success', true, 100000) //, "/close-success.svg", "/close-error.svg")
                 }}
             >
                 show toast error
