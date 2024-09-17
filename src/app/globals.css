@@ -92,4 +92,11 @@
     input[type="number"] {
         -moz-appearance: textfield;
     }
+
+    .border-custom {
+        border-image: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%) 1;
+        border-width: 4px;
+        border-style: solid;
+        padding: 5px;
+    }
 }
