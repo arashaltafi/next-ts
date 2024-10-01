@@ -17,6 +17,7 @@
     "@neshan-maps-platform/ol": "^1.0.5",
     "@neshan-maps-platform/react-openlayers": "^3.0.1",
     "@nextui-org/react": "^2.2.10",
+    "@persian-tools/persian-tools": "^3.5.2",
     "@react-pdf-viewer/attachment": "^3.12.0",
     "@react-pdf-viewer/bookmark": "^3.12.0",
     "@react-pdf-viewer/core": "^3.12.0",
