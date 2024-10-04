@@ -49,7 +49,7 @@ const delay = async (ms: number) => {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-const base64ToBlob = (base64: string, contentType: string = 'application/pdf'): Blob => {
+const base64ToBlobPdf = (base64: string, contentType: string = 'application/pdf'): Blob => {
     const byteCharacters = atob(base64);
     const byteNumbers = new Array(byteCharacters.length);
     for (let i = 0; i < byteCharacters.length; i++) {
@@ -186,11 +186,74 @@ const validateNationalCode = (code: string) => {
     return +chars[9] === lastDigit;
 };
 
+const base64ToFile = (base64String: string, fileName: string, mimeType: string): File => {
+    const byteString = atob(base64String.split(',')[1]);
+    const ab = new ArrayBuffer(byteString.length);
+    const ia = new Uint8Array(ab);
+
+    for (let i = 0; i < byteString.length; i++) {
+        ia[i] = byteString.charCodeAt(i);
+    }
+
+    return new File([ab], fileName, { type: mimeType });
+}
+
+const fileToBase64 = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+
+        reader.onload = () => resolve(reader.result as string);
+        reader.onerror = (error) => reject(error);
+    });
+}
+
+const blobToFile = (blob: Blob, fileName: string, mimeType: string): File => {
+    return new File([blob], fileName, { type: mimeType });
+}
+
+const fileToBlob = (file: File): Promise<Blob> => {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsArrayBuffer(file);
+
+        reader.onload = () => {
+            const arrayBuffer = reader.result as ArrayBuffer;
+            const blob = new Blob([arrayBuffer], { type: file.type });
+            resolve(blob);
+        };
+
+        reader.onerror = (error) => reject(error);
+    });
+}
+
+const base64ToBlob = (base64String: string, mimeType: string): Blob => {
+    const byteString = atob(base64String.split(',')[1]);
+    const ab = new ArrayBuffer(byteString.length);
+    const ia = new Uint8Array(ab);
+
+    for (let i = 0; i < byteString.length; i++) {
+        ia[i] = byteString.charCodeAt(i);
+    }
+
+    return new Blob([ab], { type: mimeType });
+}
+
+const blobToBase64 = (blob: Blob): Promise<string> => {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(blob);
+
+        reader.onloadend = () => resolve(reader.result as string);
+        reader.onerror = (error) => reject(error);
+    });
+}
+
 export {
     generateRandomNumber,
     convertMilliSecondToHoursMinute,
     delay,
-    base64ToBlob,
+    base64ToBlobPdf,
     // convertImageToBase64,
     convertImageUrlToBase64,
     // convertBase64ToImage,
@@ -204,4 +267,10 @@ export {
     // convertBase64ToPdf,
     validateCard,
     validateNationalCode,
+    base64ToFile,
+    fileToBase64,
+    blobToFile,
+    fileToBlob,
+    base64ToBlob,
+    blobToBase64,
 }
