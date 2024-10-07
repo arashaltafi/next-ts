@@ -249,6 +249,30 @@ const blobToBase64 = (blob: Blob): Promise<string> => {
     });
 }
 
+const base64ToFileExcelAndDownload = (base64: string, fileName: string) => {
+    // Convert base64 to binary string
+    const binaryString = window.atob(base64);
+    const len = binaryString.length;
+    const bytes = new Uint8Array(len);
+
+    // Convert binary string to bytes
+    for (let i = 0; i < len; i++) {
+        bytes[i] = binaryString.charCodeAt(i);
+    }
+
+    // Create a Blob from the bytes
+    const blob = new Blob([bytes], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
+
+    // Create a link element to trigger the download
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = fileName; // Set the file name
+    link.click();
+
+    // Clean up the URL object after download
+    URL.revokeObjectURL(link.href);
+};
+
 export {
     generateRandomNumber,
     convertMilliSecondToHoursMinute,
@@ -273,4 +297,5 @@ export {
     fileToBlob,
     base64ToBlob,
     blobToBase64,
+    base64ToFileExcelAndDownload
 }
