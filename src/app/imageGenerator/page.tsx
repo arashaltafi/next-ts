@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation'
 
 const ImageGenerator = () => {
-    redirect('/api/imageGenerator/arash')
+    redirect('/imageGenerator/arash')
 }
 
 export default ImageGenerator
