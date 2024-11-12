@@ -74,7 +74,7 @@ const nextConfig = {
           // },
           // {
           //   key: 'Content-Security-Policy',
-          //   value: "default-src 'self'; img-src 'self' data:; script-src 'self' https://setstage.bsi.ir; style-src 'self' https://setstage.bsi.ir;",
+          //   value: "default-src 'self'; img-src 'self' data:; script-src 'self' https://arashaltafi.ir; style-src 'self' https://arashaltafi.ir;",
           // },
         ],
       },
