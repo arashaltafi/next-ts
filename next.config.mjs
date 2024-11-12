@@ -47,7 +47,39 @@ const nextConfig = {
     GITHUB_APP_CLIENT_SECRET: 'ebbXXXXXXX5ad0dXXXXXXXXXX9a940XXXXXXXa',
     NEXTAUTH_SECRET: 'mQ46qpFwfXXXXXXXXqlm19qBXXXXXXXXXXwerwXXXXXXXXnKjM=',
   },
-
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          // {
+          //   key: "X-Frame-Options",
+          //   value: "DENY",
+          // },
+          // {
+          //   key: "X-Content-Type-Options",
+          //   value: "nosniff",
+          // },
+          // {
+          //   key: "X-XSS-Protection",
+          //   value: "1; mode=block",
+          // },
+          // {
+          //   key: "Referrer-Policy",
+          //   value: "no-referrer",
+          // },
+          // {
+          //   key: 'Strict-Transport-Security',
+          //   value: 'max-age=31536000; includeSubDomains; preload',
+          // },
+          // {
+          //   key: 'Content-Security-Policy',
+          //   value: "default-src 'self'; img-src 'self' data:; script-src 'self' https://setstage.bsi.ir; style-src 'self' https://setstage.bsi.ir;",
+          // },
+        ],
+      },
+    ];
+  },
   org: "example-org",
   project: "example-project",
   authToken: process.env.SENTRY_AUTH_TOKEN,
