@@ -47,11 +47,11 @@ const nextConfig = {
     GITHUB_APP_CLIENT_SECRET: 'ebbXXXXXXX5ad0dXXXXXXXXXX9a940XXXXXXXa',
     NEXTAUTH_SECRET: 'mQ46qpFwfXXXXXXXXqlm19qBXXXXXXXXXXwerwXXXXXXXXnKjM=',
   },
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: [
+  // async headers() {
+    // return [
+      // {
+        // source: "/(.*)",
+        // headers: [
           // {
           //   key: "X-Frame-Options",
           //   value: "DENY",
@@ -76,10 +76,10 @@ const nextConfig = {
           //   key: 'Content-Security-Policy',
           //   value: "default-src 'self'; img-src 'self' data:; script-src 'self' https://arashaltafi.ir; style-src 'self' https://arashaltafi.ir;",
           // },
-        ],
-      },
-    ];
-  },
+        // ],
+    //   },
+    // ];
+  // },
   org: "example-org",
   project: "example-project",
   authToken: process.env.SENTRY_AUTH_TOKEN,
