@@ -74,7 +74,6 @@
     "mapbox-gl": "^3.3.0",
     "mz-react-round-slider": "^1.0.3",
     "next": "^14.2.5",
-    "next-auth": "^4.24.7",
     "next-i18next": "^15.3.0",
     "next-video": "^1.0.0",
     "nookies": "^2.5.2",

@@ -1,3 +1,5 @@
+"use client"
+
 import CircularProgress from '@/components/CircularProgress';
 import React, { useState } from 'react'
 
