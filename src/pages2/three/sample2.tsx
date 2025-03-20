@@ -13,6 +13,7 @@ import { Three6 } from '@/components/Three6';
 // https://imagetostl.com/convert/file/png/to/glb#convert
 // https://sketchfab.com/
 // https://gltf.pmnd.rs/
+// https://www.cgtrader.com/
 // npm i three
 // npm i @react-three/drei
 // npm i @react-three/fiber
