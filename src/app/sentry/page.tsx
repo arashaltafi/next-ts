@@ -1,11 +1,12 @@
+"use client"
+
 import React, { useEffect } from 'react'
-import * as Sentry from "@sentry/nextjs";
 
 const SentrySample = ({ error }: { error: Error & { digest?: string } }) => {
-    useEffect(() => {
-        // Log the error to Sentry
-        Sentry.captureException(error);
-    }, [error]);
+    // useEffect(() => {
+    //     // Log the error to Sentry
+    //     Sentry.captureException(error);
+    // }, [error]);
 
     return (
         <div className='w-full min-h-screen flex flex-col items-center justify-start gap-16'>
